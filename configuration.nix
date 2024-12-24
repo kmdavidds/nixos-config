@@ -56,6 +56,23 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Use stylix
+  stylix.enable = true;
+  stylix.image = pkgs.fetchurl {
+    url = "https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg";
+    sha256 = "JJXzoL+tOPabpZQgmVm06LIPmW5IGbBL+6oijAuKx1c=";
+  };
+  stylix.polarity = "dark";
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/monokai.yaml";
+  stylix.fonts = {
+    monospace = {
+      package = pkgs.fira-code;
+      name = "Fira Code";
+    };
+  };
+  stylix.cursor.package = pkgs.bibata-cursors;
+  stylix.cursor.name = "Bibata-Modern-Ice";
+
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
