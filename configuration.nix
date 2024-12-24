@@ -118,6 +118,7 @@
     nixd
     vscode
     nixfmt-rfc-style
+    micro
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
