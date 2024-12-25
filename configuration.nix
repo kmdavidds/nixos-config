@@ -136,9 +136,13 @@
     vscode
     nixfmt-rfc-style
     micro
+    cloudflare-warp
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+
+  systemd.packages = [ pkgs.cloudflare-warp ]; # for warp-cli
+  systemd.targets.multi-user.wants = [ "warp-svc.service" ]; # causes warp-svc to be started automatically
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
