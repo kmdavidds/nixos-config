@@ -137,6 +137,7 @@
     nixfmt-rfc-style
     micro
     cloudflare-warp
+    inputs.zen-browser.packages.x86_64-linux.default
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
