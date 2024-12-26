@@ -3,8 +3,8 @@
 {
   imports = [
     ./modules/nixos/default.nix
+    ./modules/wezterm/default.nix
     # ./modules/ohmyposh/default.nix
-    # ./modules/wezterm/default.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
