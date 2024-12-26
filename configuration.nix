@@ -73,6 +73,8 @@
   stylix.cursor.package = pkgs.bibata-cursors;
   stylix.cursor.name = "Bibata-Modern-Ice";
 
+  programs.zsh.enable = true;
+
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -100,6 +102,7 @@
       "networkmanager"
       "wheel"
     ];
+    shell = pkgs.zsh;
     # packages = with pkgs; [
     #   #  thunderbird
     # ];

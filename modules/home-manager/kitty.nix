@@ -2,7 +2,7 @@
   programs.kitty = {
     enable = true;
     font = {
-      name = "Fira Code Font";
+      name = "Fira Code";
     };
     shellIntegration.enableZshIntegration = true;
   };
