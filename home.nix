@@ -3,6 +3,7 @@
 {
   imports = [
     ./modules/nixos/default.nix
+    ./modules/home-manager/kitty.nix
     # ./modules/ohmyposh/default.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
