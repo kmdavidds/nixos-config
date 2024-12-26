@@ -1,24 +1,15 @@
 { ... }:
 
 {
+  imports = [
+    ./modules/nixos/default.nix
+    ./modules/ohmyposh/default.nix
+    ./modules/wezterm/default.nix
+  ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "kmdavidds";
   home.homeDirectory = "/home/kmdavidds";
-
-  programs.git = {
-    enable = true;
-    userName = "kmdavidds";
-    userEmail = "kmdavidds@gmail.com";
-  };
-
-  programs.direnv = {
-    enable = true;
-    enableBashIntegration = true; # see note on other shells below
-    nix-direnv.enable = true;
-  };
-
-  programs.bash.enable = true;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
