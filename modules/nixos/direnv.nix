@@ -14,5 +14,8 @@
     enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
+    shellAliases = {
+        meow = "kitten icat";
+    };
   };
 }
