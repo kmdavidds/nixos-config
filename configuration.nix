@@ -57,21 +57,25 @@
   services.printing.enable = true;
 
   # Use stylix
-  stylix.enable = true;
-  stylix.image = pkgs.fetchurl {
-    url = "https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg";
-    sha256 = "JJXzoL+tOPabpZQgmVm06LIPmW5IGbBL+6oijAuKx1c=";
-  };
-  stylix.polarity = "dark";
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/monokai.yaml";
-  stylix.fonts = {
-    monospace = {
-      package = pkgs.fira-code;
-      name = "Fira Code";
+  stylix = {
+    enable = true;
+    image = pkgs.fetchurl {
+      url = "https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg";
+      sha256 = "JJXzoL+tOPabpZQgmVm06LIPmW5IGbBL+6oijAuKx1c=";
+    };
+    polarity = "dark";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/monokai.yaml";
+    fonts = {
+      monospace = {
+        package = pkgs.fira-code;
+        name = "Fira Code";
+      };
+    };
+    cursor = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
     };
   };
-  stylix.cursor.package = pkgs.bibata-cursors;
-  stylix.cursor.name = "Bibata-Modern-Ice";
 
   programs.zsh.enable = true;
 
