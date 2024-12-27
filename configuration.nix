@@ -142,6 +142,7 @@
     cloudflare-warp
     inputs.zen-browser.packages.x86_64-linux.default
     discord
+    tlrc
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];

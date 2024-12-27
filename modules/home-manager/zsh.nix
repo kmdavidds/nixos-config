@@ -4,7 +4,13 @@
     enableCompletion = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
+      nr = "sudo nixos-rebuild switch --flake .";
       meow = "kitten icat";
+      cat = "bat";
+      c = "code .";
+      ls = "eza --icons --long --no-permissions --no-filesize --no-user --no-time --all";
+      l = "eza --icons --long --all";
+      lt = "eza --icons --long --tree";
     };
     zplug = {
       enable = true;
@@ -13,5 +19,18 @@
         { name = "MichaelAquilina/zsh-you-should-use"; } # Simple plugin installation
       ];
     };
+  };
+
+  programs.bat = {
+    enable = true;
+  };
+
+  programs.zoxide = {
+    enable = true;
+  };
+
+  programs.eza = {
+    enable = true;
+    enableZshIntegration = true;
   };
 }
