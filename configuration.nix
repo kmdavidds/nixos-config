@@ -75,6 +75,12 @@
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";
     };
+    opacity = {
+      applications = 0.75;
+      terminal = 0.75;
+      desktop = 0.75;
+      popups = 0.75;
+    };
   };
 
   programs.zsh.enable = true;

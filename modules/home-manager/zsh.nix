@@ -11,6 +11,7 @@
       ls = "eza --icons --no-permissions --no-filesize --no-user --no-time --all";
       l = "eza --icons --long --all";
       lt = "eza --icons --long --tree";
+      top = "btop --update 100E";
     };
     zplug = {
       enable = true;
@@ -32,5 +33,13 @@
   programs.eza = {
     enable = true;
     enableZshIntegration = true;
+  };
+
+  programs.btop = {
+    enable = true;
+  };
+
+  programs.yazi = {
+    enable = true;
   };
 }
