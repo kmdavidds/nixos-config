@@ -9,13 +9,4 @@
   };
 
   programs.bash.enable = true;
-
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    syntaxHighlighting.enable = true;
-    shellAliases = {
-        meow = "kitten icat";
-    };
-  };
 }
