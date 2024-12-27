@@ -8,7 +8,7 @@
       meow = "kitten icat";
       cat = "bat";
       c = "code .";
-      ls = "eza --icons --long --no-permissions --no-filesize --no-user --no-time --all";
+      ls = "eza --icons --no-permissions --no-filesize --no-user --no-time --all";
       l = "eza --icons --long --all";
       lt = "eza --icons --long --tree";
     };
