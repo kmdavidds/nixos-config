@@ -20,6 +20,13 @@ console_title_template = 'kitty'
       style = 'full'
 
   [[blocks.segments]]
+    type = "nix-shell"
+    style = "plain"
+    foreground = "lightBlue"
+    background = "transparent"  
+    template = "{{if ne .Type \"unknown\"}} ❄️{{end}}"
+    
+  [[blocks.segments]]
     type = 'git'
     style = 'plain'
     foreground = 'p:grey'
@@ -30,6 +37,7 @@ console_title_template = 'kitty'
       branch_icon = ''
       commit_icon = '@'
       fetch_status = true
+  
 
 [[blocks]]
   type = 'rprompt'
