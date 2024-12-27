@@ -17,5 +17,9 @@
       background_opacity = "0.75";
       background_blur = 5;
     };
+
+    extraConfig = ''
+      map f1 launch --cwd=current --type=tab
+    '';
   };
 }
