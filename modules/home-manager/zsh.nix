@@ -1,8 +1,8 @@
 {
   programs.zsh = {
     enable = true;
-    enableCompletion = true;
-    syntaxHighlighting.enable = true;
+    dotDir = ".config/zsh";
+    enableCompletion = false;
     shellAliases = {
       nr = "sudo nixos-rebuild switch --flake .";
       meow = "kitten icat";
@@ -13,13 +13,25 @@
       lt = "eza --icons --long --tree";
       top = "btop --update 100";
     };
-    zplug = {
+    antidote = {
       enable = true;
+      useFriendlyNames = true;
       plugins = [
-        { name = "zsh-users/zsh-autosuggestions"; } # Simple plugin installation
-        { name = "MichaelAquilina/zsh-you-should-use"; } # Simple plugin installation
+        "mattmc3/zephyr path:plugins/completion"
+        "belak/zsh-utils path:editor"
+        "zsh-users/zsh-autosuggestions"
+        "zdharma-continuum/fast-syntax-highlighting"
       ];
     };
+    completionInit = ''
+      ## See https://gist.github.com/ctechols/ca1035271ad134841284
+      autoload -Uz compinit
+      [[ -n ''${ZDOTDIR}/.zcompdump(#qN.mh+24) ]] && compinit || compinit -C
+    '';
+    initExtraFirst = ''
+      ## Profiling zsh startup
+      [[ -n "''${ZSH_DEBUGRC+1}" ]] && zmodload zsh/zprof
+    '';
   };
 
   programs.bat = {
