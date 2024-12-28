@@ -153,6 +153,7 @@
     inputs.zen-browser.packages.x86_64-linux.default
     discord
     tlrc
+    (import ./pkgs/first-pkg.nix { inherit pkgs; })
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
