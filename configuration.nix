@@ -154,6 +154,7 @@
     discord
     tlrc
     (import ./pkgs/first-pkg.nix { inherit pkgs; })
+    (import ./pkgs/mkdir-nix.nix { inherit pkgs; })
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
