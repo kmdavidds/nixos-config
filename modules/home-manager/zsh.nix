@@ -11,7 +11,7 @@
       ls = "eza --icons --no-permissions --no-filesize --no-user --no-time --all";
       l = "eza --icons --long --all";
       lt = "eza --icons --long --tree";
-      top = "btop --update 100E";
+      top = "btop --update 100";
     };
     zplug = {
       enable = true;
