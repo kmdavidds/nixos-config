@@ -12,6 +12,7 @@
       l = "eza --icons --long --all";
       lt = "eza --icons --long --tree";
       top = "btop --update 100";
+      m = "mkdir-nix";
     };
     antidote = {
       enable = true;

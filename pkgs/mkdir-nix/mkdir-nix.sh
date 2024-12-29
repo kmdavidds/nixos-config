@@ -1,6 +1,6 @@
 mkdir "$1"
 cd "$1"
-flake=$(
+flake1=$(
     cat <<END
 {
   description = "A very basic nix mkShell flake";
@@ -22,6 +22,10 @@ flake=$(
 
         packages = [
           pkgs.gnumake
+END
+)
+flake2=$(
+    cat <<END
         ];
 
       };
@@ -29,8 +33,17 @@ flake=$(
 }
 END
 )
-echo "$flake" >>flake.nix
-echo "use flake" >> .envrc
+
+echo "$flake1" >>flake.nix
+
+for var in $@; do
+    if [[ $var != $1 ]]; then
+        echo "          pkgs.$var" >>flake.nix
+    fi
+done
+
+echo "$flake2" >>flake.nix
+echo "use flake" >>.envrc
 echo -e ".envrc \n.direnv" >>.gitignore
 direnv allow
 git init
