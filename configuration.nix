@@ -157,6 +157,10 @@
     (import ./pkgs/mkdir-nix/default.nix { inherit pkgs; })
   ];
 
+  environment.variables = {
+    DIRENV_LOG_FORMAT = "$'\\033[2;38;5;117mdirenv: %s\\033[0m'";
+  };
+
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
   systemd.packages = [ pkgs.cloudflare-warp ]; # for warp-cli
