@@ -155,6 +155,7 @@
     tlrc
     (import ./pkgs/first-pkg.nix { inherit pkgs; })
     (import ./pkgs/mkdir-nix/default.nix { inherit pkgs; })
+    obs-studio
   ];
 
   environment.variables = {
