@@ -36,8 +36,8 @@ END
 
 echo "$flake1" >>flake.nix
 
-for var in $@; do
-    if [[ $var != $1 ]]; then
+for var in "$@"; do
+    if [[ "$var" != "$1" ]]; then
         echo "          pkgs.$var" >>flake.nix
     fi
 done
