@@ -36,10 +36,12 @@ END
 
 echo "$flake1" >>flake.nix
 
+flag=1
 for var in "$@"; do
-    if [[ "$var" != "$1" ]]; then
+    if [[ "$flag" -gt 1 ]]; then
         echo "          pkgs.$var" >>flake.nix
     fi
+    flag=$((flag+1))
 done
 
 echo "$flake2" >>flake.nix
