@@ -159,7 +159,7 @@
   ];
 
   environment.variables = {
-    DIRENV_LOG_FORMAT = "$'\\033[2;38;5;117mdirenv: %s\\033[0m'";
+    DIRENV_LOG_FORMAT = "";
   };
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
