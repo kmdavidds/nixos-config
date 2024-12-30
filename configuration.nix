@@ -186,6 +186,44 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
+  services.kanata = {
+    enable = true;
+    keyboards = {
+      internalKeyboard = {
+        devices = [
+          "/dev/input/by-path/platform-i8042-serio-0-event-kbd"
+        ];
+        extraDefCfg = "process-unmapped-keys yes";
+        config = ''
+           (defsrc
+            caps a s d f j k l ; i
+           )
+           (defvar
+            tap-time 200
+            hold-time 200
+           )
+           (defalias
+            caps (tap-hold 100 100 esc (layer-toggle arrow))
+            a (tap-hold $tap-time $hold-time a lmet)
+            s (tap-hold $tap-time $hold-time s lalt)
+            d (tap-hold $tap-time $hold-time d lsft)
+            f (tap-hold $tap-time $hold-time f lctl)
+            j (tap-hold $tap-time $hold-time j rctl)
+            k (tap-hold $tap-time $hold-time k rsft)
+            l (tap-hold $tap-time $hold-time l ralt)
+            ; (tap-hold $tap-time $hold-time ; rmet)
+           )
+           (deflayer base
+            @caps @a  @s  @d  @f  @j  @k  @l  @; _
+           )
+           (deflayer arrow
+            @caps @a  @s  @d  @f left down right @; up
+           )
+        '';
+      };
+    };
+  };
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
