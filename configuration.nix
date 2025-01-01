@@ -195,35 +195,51 @@
         ];
         extraDefCfg = "process-unmapped-keys yes";
         config = ''
-           (defsrc
-            caps a s d f j k l ; i [ ]
-           )
-           (defvar
-            tap-time 200
-            hold-time 200
-           )
-           (defalias
-            caps (tap-hold 100 100 esc (layer-while-held arrow))
-            a (tap-hold $tap-time $hold-time a lmet)
-            s (tap-hold $tap-time $hold-time s lalt)
-            d (tap-hold $tap-time $hold-time d lsft)
-            f (tap-hold $tap-time $hold-time f lctl)
-            j (tap-hold $tap-time $hold-time j rctl)
-            k (tap-hold $tap-time $hold-time k rsft)
-            l (tap-hold $tap-time $hold-time l ralt)
-            ; (tap-hold $tap-time $hold-time ; rmet)
-            [ (tap-hold 1000 1000 [ (layer-switch base))
-            ] (tap-hold 1000 1000 ] (layer-switch default))
-           )
-           (deflayer base
-            @caps @a  @s  @d  @f  @j  @k  @l  @; _ @[ @]
-           )
-           (deflayer arrow
-            _ _ _ _ _ left down right _ up _ _
-           )
-           (deflayer default
-            _ _ _ _ _ _ _ _ _ _ @[ @]
-           )
+          (defsrc
+           caps a s d f g h j k l ; i [ ] tab r ' u o n p m .
+          )
+          (defvar
+           tap-time 200
+           hold-time 200
+          )
+          (defalias
+           caps (tap-hold 100 100 esc (layer-while-held arrow))
+           a (tap-hold $tap-time $hold-time a lmet)
+           s (tap-hold $tap-time $hold-time s lalt)
+           d (tap-hold $tap-time $hold-time d lsft)
+           f (tap-hold $tap-time $hold-time f lctl)
+           j (tap-hold $tap-time $hold-time j rctl)
+           k (tap-hold $tap-time $hold-time k rsft)
+           l (tap-hold $tap-time $hold-time l ralt)
+           ; (tap-hold $tap-time $hold-time ; rmet)
+           [ (tap-hold 1000 1000 bspc (layer-switch base))
+           ] (tap-hold 1000 1000 ] (layer-switch default))
+           tab1 (layer-switch base)
+           tab2 (layer-switch number)
+
+           a1 (tap-hold $tap-time $hold-time 1 lmet)
+           s2 (tap-hold $tap-time $hold-time 2 lalt)
+           d3 (tap-hold $tap-time $hold-time 3 lsft)
+           f4 (tap-hold $tap-time $hold-time 4 lctl)
+           g5 (tap-hold $tap-time $hold-time 5 lctl)
+           h6 (tap-hold $tap-time $hold-time 6 lctl)
+           j7 (tap-hold $tap-time $hold-time 7 rctl)
+           k8 (tap-hold $tap-time $hold-time 8 rsft)
+           l9 (tap-hold $tap-time $hold-time 9 ralt)
+           ;0 (tap-hold $tap-time $hold-time 0 rmet)
+          )
+          (deflayer base
+           @caps @a  @s  @d  @f _ _ @j  @k  @l  @; _ @[ @] @tab2 _ ret _ _ _ _ _ _
+          )
+          (deflayer arrow
+           _ _ _ _ _ _ _ left down right _ up _ _ _ tab _ _ _ _ _ _ _
+          )
+          (deflayer default
+           _ _ _ _ _ _ _ _ _ _ _ _ @[ @] _ _ _ _ _ _ _ _ _
+          )
+          (deflayer number
+           @caps @a1 @s2 @d3 @f4 @g5 @h6 @j7 @k8 @l9 @;0 _ @[ @] @tab1 _ _ [ ] ' \ = -
+          )
         '';
       };
     };
