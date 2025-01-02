@@ -222,10 +222,10 @@
            f4 (tap-hold $tap-time $hold-time 4 lctl)
            g5 (tap-hold $tap-time $hold-time 5 lctl)
            h6 (tap-hold $tap-time $hold-time 6 lctl)
-           j7 (tap-hold $tap-time $hold-time 7 rctl)
-           k8 (tap-hold $tap-time $hold-time 8 rsft)
-           l9 (tap-hold $tap-time $hold-time 9 ralt)
-           ;0 (tap-hold $tap-time $hold-time 0 rmet)
+           j7 (tap-hold $tap-time $hold-time 7 lctl)
+           k8 (tap-hold $tap-time $hold-time 8 lsft)
+           l9 (tap-hold $tap-time $hold-time 9 lalt)
+           ;0 (tap-hold $tap-time $hold-time 0 lmet)
           )
           (deflayer base
            @caps @a  @s  @d  @f _ _ @j  @k  @l  @; _ @[ @] ret _ _ _ _ _ _ @spc
