@@ -196,7 +196,7 @@
         extraDefCfg = "process-unmapped-keys yes";
         config = ''
           (defsrc
-           caps a s d f g h j k l ; i [ ] tab r ' u o n p m .
+           caps a s d f g h j k l ; i [ ] ' u o n p m . spc
           )
           (defvar
            tap-time 200
@@ -214,8 +214,7 @@
            ; (tap-hold $tap-time $hold-time ; rmet)
            [ (tap-hold 1000 1000 bspc (layer-switch base))
            ] (tap-hold 1000 1000 ] (layer-switch default))
-           tab1 (layer-switch base)
-           tab2 (layer-switch number)
+           spc (tap-hold $tap-time $hold-time spc (layer-while-held number))
 
            a1 (tap-hold $tap-time $hold-time 1 lmet)
            s2 (tap-hold $tap-time $hold-time 2 lalt)
@@ -229,19 +228,19 @@
            ;0 (tap-hold $tap-time $hold-time 0 rmet)
           )
           (deflayer base
-           @caps @a  @s  @d  @f _ _ @j  @k  @l  @; _ @[ @] @tab2 _ ret _ _ _ _ _ _
+           @caps @a  @s  @d  @f _ _ @j  @k  @l  @; _ @[ @] ret _ _ _ _ _ _ @spc
           )
           (deflayer arrow
-           _ _ _ _ _ _ _ left down right _ up _ _ _ tab _ _ _ _ _ _ _
+           _ _ _ _ _ _ _ left down right _ up _ _ _ _ _ _ _ _ _ _
           )
           (deflayer default
-           _ _ _ _ _ _ _ _ _ _ _ _ @[ @] _ _ _ _ _ _ _ _ _
+           _ _ _ _ _ _ _ _ _ _ _ _ @[ @] _ _ _ _ _ _ _ _
           )
           (deflayer number
-           @caps @a1 @s2 @d3 @f4 @g5 @h6 @j7 @k8 @l9 @;0 _ @[ @] @tab1 _ _ [ ] ' \ = -
+           @caps @a1 @s2 @d3 @f4 @g5 @h6 @j7 @k8 @l9 @;0 _ @[ @] _ [ ] ' \ = - @spc
           )
         '';
-      };
+      };         
     };
   };
 
