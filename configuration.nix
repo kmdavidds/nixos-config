@@ -208,10 +208,10 @@
            s (tap-hold $tap-time $hold-time s lalt)
            d (tap-hold $tap-time $hold-time d lsft)
            f (tap-hold $tap-time $hold-time f lctl)
-           j (tap-hold $tap-time $hold-time j rctl)
-           k (tap-hold $tap-time $hold-time k rsft)
-           l (tap-hold $tap-time $hold-time l ralt)
-           ; (tap-hold $tap-time $hold-time ; rmet)
+           j (tap-hold $tap-time $hold-time j lctl)
+           k (tap-hold $tap-time $hold-time k lsft)
+           l (tap-hold $tap-time $hold-time l lalt)
+           ; (tap-hold $tap-time $hold-time ; lmet)
            [ (tap-hold 1000 1000 bspc (layer-switch base))
            ] (tap-hold 1000 1000 ] (layer-switch default))
            spc (tap-hold $tap-time $hold-time spc (layer-while-held number))
@@ -240,7 +240,7 @@
            @caps @a1 @s2 @d3 @f4 @g5 @h6 @j7 @k8 @l9 @;0 _ @[ @] _ [ ] ' \ = - @spc
           )
         '';
-      };         
+      };
     };
   };
 
