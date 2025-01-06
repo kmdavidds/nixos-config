@@ -220,8 +220,8 @@
            s2 (tap-hold $tap-time $hold-time 2 lalt)
            d3 (tap-hold $tap-time $hold-time 3 lsft)
            f4 (tap-hold $tap-time $hold-time 4 lctl)
-           g5 (tap-hold $tap-time $hold-time 5 lctl)
-           h6 (tap-hold $tap-time $hold-time 6 lctl)
+           g5 5
+           h6 6
            j7 (tap-hold $tap-time $hold-time 7 lctl)
            k8 (tap-hold $tap-time $hold-time 8 lsft)
            l9 (tap-hold $tap-time $hold-time 9 lalt)
