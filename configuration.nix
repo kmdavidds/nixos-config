@@ -197,7 +197,12 @@
         extraDefCfg = "process-unmapped-keys yes";
         config = ''
           (defsrc
-           caps a s d f g h j k l ; i [ ] ' u o n p m . spc \
+           caps a s d 
+           f g h j 
+           k l ; i 
+           [ ] ' u 
+           o n p m 
+           . spc \
           )
           (defvar
            tap-time 200
@@ -230,16 +235,36 @@
            ;0 (tap-hold $tap-time $hold-time 0 lmet)
           )
           (deflayer base
-           @caps @a  @s  @d  @f _ _ @j  @k  @l  @; _ @[ @] ret _ _ _ _ _ _ @spc @\
+           @caps @a  @s  @d  
+           @f _ _ @j  
+           @k  @l  @; _ 
+           @[ @] ret _ 
+           _ _ _ _ 
+           _ @spc @\
           )
           (deflayer arrow
-           _ _ _ _ _ _ _ left down right _ up _ _ _ _ _ _ _ _ _ _ _
+           _ _ _ _ 
+           _ _ _ left 
+           down right _ up 
+           _ _ _ home 
+           end _ _ pgup 
+           pgdn _ _
           )
           (deflayer default
-           _ _ _ _ _ _ _ _ _ _ _ _ _ @] _ _ _ _ _ _ _ _ @\
+           _ _ _ _ 
+           _ _ _ _ 
+           _ _ _ _ 
+           _ @] _ _ 
+           _ _ _ _ 
+           _ _ @\
           )
           (deflayer number
-           @caps @a1 @s2 @d3 @f4 @g5 @h6 @j7 @k8 @l9 @;0 _ @[ @] _ [ ] ' \ = - @spc _
+           @caps @a1 @s2 @d3 
+           @f4 @g5 @h6 @j7 
+           @k8 @l9 @;0 _ 
+           @[ @] _ [ 
+           ] ' \ = 
+           - @spc _
           )
         '';
       };
