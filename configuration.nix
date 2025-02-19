@@ -72,8 +72,8 @@
       };
     };
     cursor = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Ice";
+      package = pkgs.banana-cursor;
+      name = "Banana"; 
     };
     opacity = {
       applications = 0.75;
@@ -157,6 +157,9 @@
     (import ./pkgs/mkdir-nix/default.nix { inherit pkgs; })
     obs-studio
     zoom-us
+    libreoffice-still-unwrapped
+    hunspell
+    hunspellDicts.en_US-large
   ];
 
   environment.variables = {
