@@ -83,7 +83,7 @@
     };
   };
 
-  virtualization.docker = {
+  virtualisation.docker = {
     rootless = {
       enable = true;
       setSocketVariable = true;
@@ -164,9 +164,12 @@
     (import ./pkgs/mkdir-nix/default.nix { inherit pkgs; })
     obs-studio
     zoom-us
-    libreoffice-still-unwrapped
+    libreoffice-still
     hunspell
     hunspellDicts.en_US-large
+    bruno
+    bruno-cli
+    docker-client
   ];
 
   environment.variables = {
