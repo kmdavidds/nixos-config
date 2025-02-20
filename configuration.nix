@@ -171,7 +171,6 @@
     hunspellDicts.en_US-large
     bruno
     bruno-cli
-    docker-client
   ];
 
   environment.variables = {
