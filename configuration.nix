@@ -73,13 +73,20 @@
     };
     cursor = {
       package = pkgs.banana-cursor;
-      name = "Banana"; 
+      name = "Banana";
     };
     opacity = {
       applications = 0.75;
       terminal = 0.75;
       desktop = 0.75;
       popups = 0.75;
+    };
+  };
+
+  virtualization.docker = {
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
     };
   };
 
