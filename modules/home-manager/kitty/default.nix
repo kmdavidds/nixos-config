@@ -20,6 +20,7 @@
 
     extraConfig = ''
       map f1 launch --cwd=current --type=tab
+      map Alt+c kitten kitty_grab/grab.py
     '';
   };
 }

@@ -92,6 +92,7 @@
 
   programs.zsh.enable = true;
   programs.dconf.enable = true;
+  services.dbus.packages = [ pkgs.dconf ];
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
