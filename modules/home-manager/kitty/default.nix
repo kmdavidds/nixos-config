@@ -16,6 +16,7 @@
       window_padding_width = 10;
       background_opacity = "0.75";
       background_blur = 5;
+      background = "#1E1E1E";
     };
 
     extraConfig = ''

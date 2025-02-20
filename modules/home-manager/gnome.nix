@@ -20,11 +20,13 @@
         move-to-workspace-6 = ["<Shift><Super>comma"];
         move-to-workspace-7 = ["<Shift><Super>period"];
         move-to-workspace-8 = ["<Shift><Super>slash"];
+        focus-active-notification = ["<Super>b"]; 
         maximize = ["<Alt><Super>i"];
         unmaximize = ["<Alt><Super>k"];
         toggle-tiled-left = ["<Alt><Super>j"];
         toggle-tiled-right = ["<Alt><Super>l"];
         toggle-fullscreen = ["<Alt><Super>u"];
+        cycle-windows = ["<Alt>s"];
       };
     };
   };
