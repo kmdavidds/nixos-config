@@ -27,6 +27,7 @@
         toggle-tiled-right = ["<Alt><Super>l"];
         toggle-fullscreen = ["<Alt><Super>u"];
         cycle-windows = ["<Alt>s"];
+        close = ["<Alt>r"];
       };
     };
   };
