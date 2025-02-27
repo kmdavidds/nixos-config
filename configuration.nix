@@ -171,6 +171,7 @@
     hunspellDicts.en_US-large
     bruno
     bruno-cli
+    dbgate
   ];
 
   environment.variables = {
