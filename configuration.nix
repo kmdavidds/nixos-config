@@ -60,8 +60,8 @@
   stylix = {
     enable = true;
     image = pkgs.fetchurl {
-      url = "https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg";
-      sha256 = "JJXzoL+tOPabpZQgmVm06LIPmW5IGbBL+6oijAuKx1c=";
+      url = "https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg";
+      sha256 = "Xm7/Dt/vGFcqJ4VGy1ryYBGvsd4alS3Pkol3XIwx8PI=";
     };
     polarity = "dark";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/monokai.yaml";
