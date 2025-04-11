@@ -6,7 +6,7 @@ flake1=$(
   description = "A very basic nix mkShell flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
   };
 
   outputs =
