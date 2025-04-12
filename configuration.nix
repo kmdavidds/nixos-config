@@ -83,12 +83,7 @@
     };
   };
 
-  virtualisation.docker = {
-    rootless = {
-      enable = true;
-      setSocketVariable = true;
-    };
-  };
+  virtualisation.docker.enable = true;
 
   programs.zsh.enable = true;
   programs.dconf.enable = true;
@@ -120,6 +115,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "docker"
     ];
     shell = pkgs.zsh;
     # packages = with pkgs; [
@@ -172,6 +168,7 @@
     bruno
     bruno-cli
     dbgate
+    laravel
   ];
 
   environment.variables = {
