@@ -13,6 +13,9 @@
       lt = "eza --icons --long --tree";
       top = "btop --update 100";
       m = "mkdir-nix";
+      sail = "./vendor/bin/sail";
+      ds = "docker ps";
+      dis = "docker image ls";
     };
     antidote = {
       enable = true;
