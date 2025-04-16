@@ -17,6 +17,7 @@
       sphp = "./vendor/bin/sail";
       ds = "docker ps";
       dis = "docker image ls";
+      ssh = "TERM=xterm-256color ssh";
     };
     antidote = {
       enable = true;
