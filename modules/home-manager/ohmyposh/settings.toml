@@ -25,6 +25,13 @@ console_title_template = 'kitty'
     foreground = "lightBlue"
     background = "transparent"  
     template = "{{if ne .Type \"unknown\"}} ❄️{{end}}"
+
+  [[blocks.segments]]
+    type = "docker"
+    style = "plain"
+    foreground = "lightBlue"
+    background = "transparent"
+    template = " \uf308 {{ .Context }}"
     
   [[blocks.segments]]
     type = 'git'
