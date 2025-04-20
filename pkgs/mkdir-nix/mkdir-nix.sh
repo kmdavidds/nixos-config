@@ -1,3 +1,22 @@
+#!/usr/bin/env bash
+
+OPT_G='false'
+
+while getopts ':g' 'OPTKEY'; do
+    case ${OPTKEY} in
+        'g')
+            OPT_G='true'
+            ;;
+        '?')
+            echo "INVALID OPTION -- ${OPTARG}" >&2
+            exit 1
+            ;;
+    esac
+done
+
+shift $(( OPTIND - 1 ))
+[[ "${1}" == "--" ]] && shift
+
 if [ ! -d "$1" ]; then
   mkdir "$1"
 fi
@@ -50,6 +69,9 @@ echo "$flake2" >>flake.nix
 echo "use flake" >>.envrc
 echo -e ".envrc \n.direnv" >>.gitignore
 direnv allow
-git init
-git add .
-git commit -m "init flake"
+if ${OPT_G}; then
+    git init
+    git add .
+    git commit -m "init flake"
+fi
+
