@@ -83,6 +83,8 @@
   };
 
   virtualisation.docker.enable = true;
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "kmdavidds" ];
 
   programs.zsh.enable = true;
   programs.dconf.enable = true;
