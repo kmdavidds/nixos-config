@@ -170,6 +170,7 @@
     bruno-cli
     dbgate
     cloudflared
+    ansible
   ];
 
   environment.variables = {
