@@ -12,7 +12,6 @@ console_title_template = 'kitty'
   [[blocks.segments]]
     type = 'path'
     style = 'plain'
-    background = 'transparent'
     foreground = '#FD971F'
     template = '{{ .Path }}'
 
@@ -22,23 +21,20 @@ console_title_template = 'kitty'
   [[blocks.segments]]
     type = "nix-shell"
     style = "plain"
-    foreground = "lightBlue"
-    background = "transparent"  
-    template = "{{if ne .Type \"unknown\"}} ❄️{{end}}"
+    foreground = "white"  
+    template = "{{if ne .Type \"unknown\"}} <#5178C4>n</><#5F8FCF>i</><#6DA5DA>x</><#7BBBE4>:(</>shell<#7FBBE5>)</>{{end}}"
 
   [[blocks.segments]]
     type = "docker"
     style = "plain"
     foreground = "lightBlue"
-    background = "transparent"
-    template = " \uf308 {{ .Context }}"
+    template = " context:(<white>{{ .Context }}</>)"
     
   [[blocks.segments]]
     type = 'git'
     style = 'plain'
-    foreground = 'p:grey'
-    background = 'transparent'
-    template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
+    foreground = '#F1502F'
+    template = ' git:(<white>{{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }}{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>)</>'
 
     [blocks.segments.properties]
       branch_icon = ''
@@ -54,11 +50,7 @@ console_title_template = 'kitty'
     type = 'executiontime'
     style = 'plain'
     foreground = 'yellow'
-    background = 'transparent'
     template = '{{ .FormattedMs }}'
-
-    [blocks.segments.properties]
-      threshold = 5000
 
 [[blocks]]
   type = 'prompt'
@@ -69,21 +61,16 @@ console_title_template = 'kitty'
     type = 'text'
     style = 'plain'
     foreground_templates = [
-      "{{if gt .Code 0}}red{{end}}",
-      "{{if eq .Code 0}}#FD971F{{end}}",
+      "#FD971F",
     ]
-    background = 'transparent'
     template = '❯'
 
 [transient_prompt]
   foreground_templates = [
-    "{{if gt .Code 0}}red{{end}}",
-    "{{if eq .Code 0}}#FD971F{{end}}",
+    "#FD971F",
   ]
-  background = 'transparent'
   template = '❯ '
 
 [secondary_prompt]
   foreground = '#FD971F'
-  background = 'transparent'
   template = '❯❯ '
