@@ -174,10 +174,6 @@
     ansible
   ];
 
-  environment.variables = {
-    DIRENV_LOG_FORMAT = "";
-  };
-
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
   systemd.packages = [ pkgs.cloudflare-warp ]; # for warp-cli
