@@ -74,6 +74,7 @@
     cursor = {
       package = pkgs.banana-cursor;
       name = "Banana";
+      size = 1;
     };
     opacity = {
       applications = 0.75;
