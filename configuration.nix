@@ -5,6 +5,7 @@
 {
   pkgs,
   inputs,
+  lib,
   ...
 }:
 
@@ -16,7 +17,26 @@
   ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  # boot.loader.systemd-boot.enable = true;
+  boot.loader = {
+    grub = {
+      enable = true;
+      efiSupport = true;
+      device = "nodev";
+      theme = lib.mkForce (pkgs.stdenv.mkDerivation {
+        pname = "minegrub-theme";
+        version = "2.0.0";
+        src = pkgs.fetchFromGitHub {
+          owner = "Lxtharia";
+          repo = "minegrub-theme";
+          rev = "v2.0.0";
+          hash = "sha256-HZnVr9NtierP22pMy8C/BeZJDpBkKixROG0JaCAq5Y8=";
+        };
+        installPhase = "cp -r minegrub $out";
+      });
+    };
+  };
+
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
