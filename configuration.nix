@@ -198,6 +198,7 @@
     dbgate
     cloudflared
     ansible
+    gnomeExtensions.spotify-controls
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
