@@ -12,6 +12,8 @@
     stylix.url = "github:danth/stylix/master";
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
@@ -21,6 +23,7 @@
         ./configuration.nix
         inputs.home-manager.nixosModules.default
         inputs.stylix.nixosModules.stylix
+        inputs.spicetify-nix.nixosModules.default
       ];
     };
   };

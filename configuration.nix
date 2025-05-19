@@ -104,6 +104,9 @@
       desktop = 0.75;
       popups = 0.75;
     };
+    targets = {
+        spicetify.enable = false;
+    };
   };
 
   virtualisation.docker.enable = true;
@@ -201,6 +204,24 @@
 
   systemd.packages = [ pkgs.cloudflare-warp ]; # for warp-cli
   systemd.targets.multi-user.wants = [ "warp-svc.service" ]; # causes warp-svc to be started automatically
+
+  programs.spicetify =
+    let
+      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+    in
+    {
+      enable = true;
+
+      enabledExtensions = with spicePkgs.extensions; [
+        adblock
+        hidePodcasts
+        autoSkipVideo
+        beautifulLyrics
+      ];
+
+      theme = spicePkgs.themes.catppuccin;
+      colorScheme = "mocha";
+    };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
