@@ -159,6 +159,10 @@
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
+  # Enable auto-cpufreq
+  services.power-profiles-daemon.enable = false;
+  services.auto-cpufreq.enable = true;
+
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -199,6 +203,7 @@
     cloudflared
     ansible
     gnomeExtensions.spotify-controls
+    auto-cpufreq
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
