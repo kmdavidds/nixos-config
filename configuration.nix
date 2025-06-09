@@ -204,6 +204,7 @@
     ansible
     gnomeExtensions.spotify-controls
     auto-cpufreq
+    laravel
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
