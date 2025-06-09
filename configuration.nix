@@ -105,7 +105,7 @@
       popups = 0.75;
     };
     targets = {
-        spicetify.enable = false;
+      spicetify.enable = false;
     };
   };
 
@@ -165,6 +165,10 @@
 
   # Install firefox.
   programs.firefox.enable = true;
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
 
   home-manager = {
     # also pass inputs to home-manager modules
