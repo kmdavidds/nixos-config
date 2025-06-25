@@ -209,6 +209,7 @@
     gnomeExtensions.spotify-controls
     auto-cpufreq
     laravel
+    aseprite
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
