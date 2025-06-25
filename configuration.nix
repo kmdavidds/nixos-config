@@ -207,6 +207,8 @@
     cloudflared
     ansible
     gnomeExtensions.spotify-controls
+    gnomeExtensions.system-monitor
+    gnomeExtensions.auto-move-windows
     auto-cpufreq
     laravel
     aseprite
