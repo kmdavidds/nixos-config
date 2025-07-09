@@ -70,16 +70,6 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-    withUWSM = true; # recommended for most users
-    xwayland.enable = true; # Xwayland can be disabled.
-  };
-
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -90,34 +80,34 @@
   services.printing.enable = true;
 
   # Use stylix
-  #   stylix = {
-  #     enable = true;
-  #     image = pkgs.fetchurl {
-  #       url = "https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg";
-  #       sha256 = "Xm7/Dt/vGFcqJ4VGy1ryYBGvsd4alS3Pkol3XIwx8PI=";
-  #     };
-  #     polarity = "dark";
-  #     base16Scheme = "${pkgs.base16-schemes}/share/themes/monokai.yaml";
-  #     fonts = {
-  #       monospace = {
-  #         package = pkgs.fira-code;
-  #         name = "Fira Code";
-  #       };
-  #     };
-  #     cursor = {
-  #       package = pkgs.banana-cursor;
-  #       name = "Banana";
-  #       size = 1;
-  #     };
-  #     opacity = {
-  #       applications = 0.75;
-  #       desktop = 0.75;
-  #       popups = 0.75;
-  #     };
-  #     targets = {
-  #       spicetify.enable = false;
-  #     };
-  #   };
+  stylix = {
+    enable = true;
+    image = pkgs.fetchurl {
+      url = "https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg";
+      sha256 = "Xm7/Dt/vGFcqJ4VGy1ryYBGvsd4alS3Pkol3XIwx8PI=";
+    };
+    polarity = "dark";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/monokai.yaml";
+    fonts = {
+      monospace = {
+        package = pkgs.fira-code;
+        name = "Fira Code";
+      };
+    };
+    cursor = {
+      package = pkgs.banana-cursor;
+      name = "Banana";
+      size = 1;
+    };
+    opacity = {
+      applications = 0.75;
+      desktop = 0.75;
+      popups = 0.75;
+    };
+    targets = {
+      spicetify.enable = false;
+    };
+  };
 
   virtualisation.docker.enable = true;
   virtualisation.virtualbox.host.enable = true;
@@ -162,12 +152,12 @@
   };
 
   # Enable automatic login for the user.
-  #   services.displayManager.autoLogin.enable = true;
-  #   services.displayManager.autoLogin.user = "kmdavidds";
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "kmdavidds";
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
-  #   systemd.services."getty@tty1".enable = false;
-  #   systemd.services."autovt@tty1".enable = false;
+  systemd.services."getty@tty1".enable = false;
+  systemd.services."autovt@tty1".enable = false;
 
   # Enable auto-cpufreq
   services.power-profiles-daemon.enable = false;
@@ -223,16 +213,7 @@
     laravel
     aseprite
     postman
-    waybar
-    rofi-wayland
-    font-awesome
-    dunst
-    libnotify
-    swww
-    networkmanagerapplet
   ];
-
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 

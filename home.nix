@@ -7,7 +7,7 @@
     ./modules/home-manager/gnome.nix
     ./modules/home-manager/kitty/default.nix
     ./modules/home-manager/ohmyposh/default.nix
-    ./modules/home-manager/hyprland/hyprland.nix
+    # ./modules/home-manager/hyprland/hyprland.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -57,7 +57,7 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
-    ".config/waybar".source = ./modules/home-manager/waybar;
+    # ".config/waybar".source = ./modules/home-manager/waybar;
   };
 
   # Home Manager can also manage your environment variables through
