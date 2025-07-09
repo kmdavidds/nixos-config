@@ -74,7 +74,7 @@ in
       # Set programs that you use
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
-      "$menu" = "rofi --show drun --show-icons";
+      "$menu" = "rofi -show drun -show-icons";
 
       #################
       ### AUTOSTART ###
