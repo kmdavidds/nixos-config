@@ -1,4 +1,9 @@
 {
+  lib,
+  ...
+}:
+
+{
   programs.zsh = {
     enable = true;
     dotDir = ".config/zsh";
@@ -35,7 +40,7 @@
       autoload -Uz compinit
       [[ -n ''${ZDOTDIR}/.zcompdump(#qN.mh+24) ]] && compinit || compinit -C
     '';
-    initExtraFirst = ''
+    initContent = lib.mkBefore ''
       ## Profiling zsh startup
       [[ -n "''${ZSH_DEBUGRC+1}" ]] && zmodload zsh/zprof
     '';

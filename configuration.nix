@@ -67,8 +67,8 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -83,11 +83,11 @@
   stylix = {
     enable = true;
     image = pkgs.fetchurl {
-      url = "https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg";
-      sha256 = "Xm7/Dt/vGFcqJ4VGy1ryYBGvsd4alS3Pkol3XIwx8PI=";
+      url = "https://raw.githubusercontent.com/HyDE-Project/hyde-themes/refs/heads/Catppuccin-Mocha/Configs/.config/hyde/themes/Catppuccin%20Mocha/wallpapers/evening_sky.png";
+      sha256 = "fYMzoY3un4qGOSR4DMqVUAFmGGil+wUze31rLLrjcAc=";
     };
     polarity = "dark";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/monokai.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     fonts = {
       monospace = {
         package = pkgs.fira-code;
@@ -95,9 +95,9 @@
       };
     };
     cursor = {
-      package = pkgs.banana-cursor;
-      name = "Banana";
-      size = 1;
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
+      size = 8;
     };
     opacity = {
       applications = 0.75;
@@ -118,7 +118,7 @@
   services.dbus.packages = [ pkgs.dconf ];
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -267,11 +267,11 @@
         extraDefCfg = "process-unmapped-keys yes";
         config = ''
           (defsrc
-           caps a s d 
-           f g h j 
-           k l ; i 
-           [ ] ' u 
-           o n p m 
+           caps a s d
+           f g h j
+           k l ; i
+           [ ] ' u
+           o n p m
            . spc \
           )
           (defvar
@@ -288,7 +288,7 @@
            k (tap-hold $tap-time $hold-time k lsft)
            l (tap-hold $tap-time $hold-time l lalt)
            ; (tap-hold $tap-time $hold-time ; lmet)
-           [ bspc 
+           [ bspc
            spc (tap-hold $tap-time $hold-time spc (layer-while-held number))
            ] (tap-hold 1000 1000 ] (layer-switch base))
            \ (tap-hold 1000 1000 \ (layer-switch default))
@@ -305,35 +305,35 @@
            ;0 (tap-hold $tap-time $hold-time 0 lmet)
           )
           (deflayer base
-           @caps @a  @s  @d  
-           @f _ _ @j  
-           @k  @l  @; _ 
-           @[ @] ret _ 
-           _ _ _ _ 
+           @caps @a  @s  @d
+           @f _ _ @j
+           @k  @l  @; _
+           @[ @] ret _
+           _ _ _ _
            _ @spc @\
           )
           (deflayer arrow
-           _ _ _ _ 
-           _ _ _ left 
-           down right _ up 
-           _ _ _ home 
-           end _ _ pgup 
+           _ _ _ _
+           _ _ _ left
+           down right _ up
+           _ _ _ home
+           end _ _ pgup
            pgdn _ _
           )
           (deflayer default
-           _ _ _ _ 
-           _ _ _ _ 
-           _ _ _ _ 
-           _ @] _ _ 
-           _ _ _ _ 
+           _ _ _ _
+           _ _ _ _
+           _ _ _ _
+           _ @] _ _
+           _ _ _ _
            _ _ @\
           )
           (deflayer number
-           @caps @a1 @s2 @d3 
-           @f4 @g5 @h6 @j7 
-           @k8 @l9 @;0 _ 
-           @[ @] _ [ 
-           ] ' \ = 
+           @caps @a1 @s2 @d3
+           @f4 @g5 @h6 @j7
+           @k8 @l9 @;0 _
+           @[ @] _ [
+           ] ' \ =
            - @spc _
           )
         '';
