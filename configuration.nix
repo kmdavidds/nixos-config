@@ -220,7 +220,12 @@
     laravel
     aseprite
     postman
+    waybar
+    wofi
+    font-awesome
   ];
+
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
