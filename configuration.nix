@@ -77,6 +77,9 @@
     xwayland.enable = true; # Xwayland can be disabled.
   };
 
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -221,8 +224,12 @@
     aseprite
     postman
     waybar
-    wofi
+    rofi-wayland
     font-awesome
+    dunst
+    libnotify
+    swww
+    networkmanagerapplet
   ];
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";

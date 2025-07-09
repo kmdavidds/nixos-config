@@ -7,7 +7,14 @@
 
 let
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
+    ${pkgs.swww}/bin/swww init &
+    ${pkgs.swww}/bin/swww img /home/kmdavidds/Pictures/eveningsky.png &
+
+    ${pkgs.networkmanagerapplet}/bin/nm-applet --indicator &
+
     ${pkgs.waybar}/bin/waybar &
+
+    ${pkgs.dunst}/bin/dunst &
   '';
 in
 {
@@ -67,7 +74,7 @@ in
       # Set programs that you use
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
-      "$menu" = "wofi --show drun";
+      "$menu" = "rofi --show hi --show-icons";
 
       #################
       ### AUTOSTART ###
@@ -353,7 +360,6 @@ in
         "suppressevent maximize, class:.*"
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
       ];
-
     };
   };
 }
