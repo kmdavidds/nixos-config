@@ -5,5 +5,7 @@
     ./kitty
     ./ohmyposh
     ./zsh
+    ./direnv
+    ./git
   ];
-} 
+}

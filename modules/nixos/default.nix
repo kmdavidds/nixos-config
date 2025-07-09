@@ -1,6 +1,10 @@
 {
   imports = [
-    ./direnv
-    ./git
+    ./grub
+    ./stylix
+    ./kanata
+    ./spicetify
+    ./programs
+    ./services
   ];
 }
