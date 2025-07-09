@@ -194,8 +194,8 @@
     inputs.zen-browser.packages.x86_64-linux.default
     discord
     tlrc
-    (import ./pkgs/first-pkg.nix { inherit pkgs; })
-    (import ./pkgs/mkdir-nix/default.nix { inherit pkgs; })
+    (import ./pkgs/first-pkg { inherit pkgs; })
+    (import ./pkgs/mkdir-nix { inherit pkgs; })
     obs-studio
     zoom-us
     libreoffice-still
