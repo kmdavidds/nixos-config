@@ -9,16 +9,18 @@
 let
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
     ${pkgs.swww}/bin/swww init &
+
+    sleep 1
+
     ${pkgs.swww}/bin/swww img /home/kmdavidds/Pictures/eveningsky.png &
 
     ${pkgs.networkmanagerapplet}/bin/nm-applet --indicator &
-
-    ${pkgs.waybar}/bin/waybar &
 
     ${pkgs.dunst}/bin/dunst &
   '';
 in
 {
+  services.swww.enable = true;
   wayland.windowManager.hyprland = {
     enable = true;
 
@@ -133,8 +135,8 @@ in
         "border_size" = "2";
 
         # https://wiki.hypr.land/Configuring/Variables/#variable-types for info about colors
-        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-        "col.inactive_border" = "rgba(595959aa)";
+        "col.active_border" = "rgba(cba6f7ee) rgba(89b4faee) 45deg";
+        "col.inactive_border" = "rgba(585b70aa)";
 
         # Set to true enable resizing windows by clicking and dragging on borders and gaps
         "resize_on_border" = "false";
@@ -232,8 +234,8 @@ in
 
       # https://wiki.hypr.land/Configuring/Variables/#misc
       "misc" = {
-        "force_default_wallpaper" = "-1"; # Set to 0 or 1 to disable the anime mascot wallpapers
-        "disable_hyprland_logo" = "false"; # If true disables the random hyprland logo / anime girl background. :(
+        "force_default_wallpaper" = "0"; # Set to 0 or 1 to disable the anime mascot wallpapers
+        "disable_hyprland_logo" = "true"; # If true disables the random hyprland logo / anime girl background. :(
       };
 
       #############
@@ -360,6 +362,14 @@ in
       "windowrule" = [
         "suppressevent maximize, class:.*"
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+      ];
+
+      "windowrulev2" = [
+        "opacity 0.85 0.85,class:^(code-url-handler)$"
+        "opacity 0.85 0.85,class:^(code)$"
+        "opacity 0.85 0.85,class:^(zen-beta)$"
+        "opacity 0.85 0.85,class:^(zen)$"
+        "opacity 0.85 0.85,class:^(Spotify)$"
       ];
     };
   };

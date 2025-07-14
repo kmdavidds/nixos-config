@@ -42,9 +42,27 @@
     aseprite
     postman
     rofi-wayland
+    waybar
+    dunst
+    libnotify
+    networkmanagerapplet
+    swww
+    font-awesome
   ];
 
-  programs.hyprland.enable = true;
+  fonts.packages = with pkgs; [
+    nerd-fonts.fira-code
+    nerd-fonts.droid-sans-mono
+    nerd-fonts.jetbrains-mono
+  ];
+
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+    withUWSM = true; # recommended for most users
+    xwayland.enable = true; # Xwayland can be disabled.
+  };
+  programs.waybar.enable = true;
 
   programs.zsh.enable = true;
   programs.dconf.enable = true;

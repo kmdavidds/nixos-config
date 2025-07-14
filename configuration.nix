@@ -64,6 +64,9 @@
     };
   };
 
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
