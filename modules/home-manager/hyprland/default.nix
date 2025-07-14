@@ -372,6 +372,7 @@ in
         "opacity 0.85 0.85,class:^(zen-beta)$"
         "opacity 0.85 0.85,class:^(zen)$"
         "opacity 0.85 0.85,class:^(spotify)$"
+        "opacity 0.85 0.85,class:^(Postman)$"
       ];
     };
   };
