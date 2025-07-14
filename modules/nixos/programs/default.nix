@@ -49,6 +49,7 @@
     swww
     font-awesome
     hyprlock
+    blueberry
   ];
 
   fonts.packages = with pkgs; [
