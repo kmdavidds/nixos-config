@@ -41,6 +41,7 @@
     laravel
     aseprite
     postman
+    rofi-wayland
   ];
 
   programs.zsh.enable = true;

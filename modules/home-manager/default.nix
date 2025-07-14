@@ -1,7 +1,7 @@
 {
   imports = [
     ./gnome
-    # ./hyprland
+    ./hyprland
     ./kitty
     ./ohmyposh
     ./zsh

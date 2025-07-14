@@ -2,6 +2,7 @@
 
 {
   pkgs,
+  lib,
   ...
 }:
 
@@ -44,7 +45,7 @@ in
     #     "$mod ALT, mouse:272, resizewindow"
     #   ];
     # };
-    settings = {
+    settings = lib.mkForce {
       exec-once = ''${startupScript}/bin/start'';
 
       # This is an example Hyprland config file.

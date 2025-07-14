@@ -8,69 +8,61 @@ console_title_template = 'kitty'
   type = 'prompt'
   alignment = 'left'
   newline = true
-
   [[blocks.segments]]
     type = 'path'
     style = 'plain'
-    foreground = '#FD971F'
+    foreground = '#f9e2af'  # Catppuccin Yellow
     template = '{{ .Path }}'
-
     [blocks.segments.properties]
       style = 'full'
-
   [[blocks.segments]]
     type = "nix-shell"
     style = "plain"
-    foreground = "white"  
-    template = "{{if ne .Type \"unknown\"}} <#5178C4>n</><#5F8FCF>i</><#6DA5DA>x</><#7BBBE4>:(</>shell<#7FBBE5>)</>{{end}}"
-
+    foreground = "#cdd6f4"  # Catppuccin Text
+    template = "{{if ne .Type \"unknown\"}} <#74c7ec>n</><#89b4fa>i</><#89b4fa>x</><#74c7ec>:(</>shell<#89b4fa>)</>{{end}}"
   [[blocks.segments]]
     type = "docker"
     style = "plain"
-    foreground = "lightBlue"
-    template = " context:(<white>{{ .Context }}</>)"
-    
+    foreground = "#89b4fa"  # Catppuccin Blue
+    template = " context:(<#cdd6f4>{{ .Context }}</>)"
+
   [[blocks.segments]]
     type = 'git'
     style = 'plain'
-    foreground = '#F1502F'
-    template = ' git:(<white>{{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }}{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>)</>'
-
+    foreground = '#f38ba8'  # Catppuccin Pink
+    template = ' git:(<#cdd6f4>{{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }}{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>)</>'
     [blocks.segments.properties]
       branch_icon = ''
       commit_icon = '@'
       fetch_status = true
-  
 
 [[blocks]]
   type = 'rprompt'
   overflow = 'hidden'
-
   [[blocks.segments]]
     type = 'executiontime'
     style = 'plain'
-    foreground = 'yellow'
+    foreground = '#f9e2af'  # Catppuccin Yellow
     template = '{{ .FormattedMs }}'
 
 [[blocks]]
   type = 'prompt'
   alignment = 'left'
   newline = true
-
   [[blocks.segments]]
     type = 'text'
     style = 'plain'
     foreground_templates = [
-      "#FD971F",
+      "#cba6f7",  # Catppuccin Mauve
     ]
     template = '❯'
 
 [transient_prompt]
   foreground_templates = [
-    "#FD971F",
+    "#cba6f7",  # Catppuccin Mauve
   ]
   template = '❯ '
 
 [secondary_prompt]
-  foreground = '#FD971F'
+  foreground = '#cba6f7'  # Catppuccin Mauve
   template = '❯❯ '
