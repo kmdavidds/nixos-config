@@ -8,8 +8,20 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = true;
+  services.displayManager.gdm.enable = false;
+  services.xserver.displayManager.lightdm.enable = false;
   services.desktopManager.gnome.enable = true;
+
+  services.greetd = {
+    enable = true;
+    settings = rec {
+      initial_session = {
+        command = "${pkgs.hyprland}/bin/hyprland";
+        user = "kmdavidds";
+      };
+      default_session = initial_session;
+    };
+  };
 
   # Configure keymap in X11
   services.xserver.xkb = {

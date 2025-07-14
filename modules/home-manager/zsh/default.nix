@@ -43,6 +43,9 @@
     initContent = lib.mkBefore ''
       ## Profiling zsh startup
       [[ -n "''${ZSH_DEBUGRC+1}" ]] && zmodload zsh/zprof
+      if [ -z "''${WAYLAND_DISPLAY}" ] && [ "''${XDG_VTNR}" -eq 1 ]; then
+        dbus-run-session Hyprland
+      fi
     '';
   };
 

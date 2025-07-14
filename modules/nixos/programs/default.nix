@@ -48,6 +48,7 @@
     networkmanagerapplet
     swww
     font-awesome
+    hyprlock
   ];
 
   fonts.packages = with pkgs; [
@@ -63,6 +64,7 @@
     xwayland.enable = true; # Xwayland can be disabled.
   };
   programs.waybar.enable = true;
+  programs.hyprlock.enable = true;
 
   programs.zsh.enable = true;
   programs.dconf.enable = true;

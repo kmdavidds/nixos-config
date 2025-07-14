@@ -17,7 +17,7 @@ window#waybar {
 
 /** Clock styling **/
 #clock {
-  background-color: rgba(30, 30, 30, 0.8);
+  background-color: rgba(30, 30, 30, 0.5);
   color: #ffffff;
   padding: 4px 12px;
   border-radius: 16px;
@@ -31,7 +31,7 @@ window#waybar {
 #network,
 #battery,
 #tray {
-  background-color: rgba(30, 30, 30, 0.8);
+  background-color: rgba(30, 30, 30, 0.5);
   padding: 4px 8px;
   margin: 2px 1px;
   border-radius: 16px;
