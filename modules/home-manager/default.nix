@@ -2,6 +2,7 @@
   imports = [
     ./gnome
     ./hyprland
+    ./hyprlock
     ./kitty
     ./ohmyposh
     ./zsh
