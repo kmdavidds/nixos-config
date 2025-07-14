@@ -53,6 +53,7 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
     ".config/waybar".source = ./modules/home-manager/waybar;
+    ".config/wofi".source = ./modules/home-manager/wofi;
   };
 
   # Home Manager can also manage your environment variables through

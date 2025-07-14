@@ -79,7 +79,7 @@ in
       # Set programs that you use
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
-      "$menu" = "rofi -show drun -show-icons";
+      "$menu" = "wofi --show drun --show-icons";
 
       #################
       ### AUTOSTART ###
@@ -371,7 +371,7 @@ in
         "opacity 0.85 0.85,class:^(code)$"
         "opacity 0.85 0.85,class:^(zen-beta)$"
         "opacity 0.85 0.85,class:^(zen)$"
-        "opacity 0.85 0.85,class:^(Spotify)$"
+        "opacity 0.85 0.85,class:^(spotify)$"
       ];
     };
   };

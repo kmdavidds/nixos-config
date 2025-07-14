@@ -41,7 +41,7 @@
     laravel
     aseprite
     postman
-    rofi-wayland
+    wofi
     waybar
     dunst
     libnotify
@@ -64,7 +64,7 @@
     xwayland.enable = true; # Xwayland can be disabled.
   };
   programs.waybar.enable = true;
-  
+
   programs.zsh.enable = true;
   programs.dconf.enable = true;
 
