@@ -68,7 +68,7 @@ in
       ################
 
       # See https://wiki.hypr.land/Configuring/Monitors/
-      "monitor" = ",preferred,auto,auto";
+      "monitor" = ",preferred,auto,1";
 
       ###################
       ### MY PROGRAMS ###
