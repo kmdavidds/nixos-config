@@ -50,6 +50,8 @@
     font-awesome
     hyprlock
     blueberry
+    xsettingsd
+    xorg.xrdb
   ];
 
   fonts.packages = with pkgs; [

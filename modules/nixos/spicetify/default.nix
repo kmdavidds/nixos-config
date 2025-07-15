@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  lib,
   ...
 }:
 
@@ -19,7 +20,7 @@
         beautifulLyrics
       ];
 
-      theme = spicePkgs.themes.catppuccin;
-      colorScheme = "mocha";
+      theme = lib.mkForce spicePkgs.themes.catppuccin;
+      colorScheme = lib.mkForce "mocha";
     };
 }
