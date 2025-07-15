@@ -29,10 +29,6 @@
         cycle-windows = ["<Alt>s"];
         close = ["<Alt>r"];
       };
-      "org.gnome.desktop.interface" = {
-        gtk-theme = ["catppuccin"];
-        color-scheme = ["prefer-dark"];
-      };
     };
   };
 }

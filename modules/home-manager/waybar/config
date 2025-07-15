@@ -18,7 +18,7 @@
     "tray"
   ],
   "clock": {
-    "format": "{:%H:%M  %A, %b %d}",
+    "format": "{:%H:%M  %A, %d %B %Y}",
     "format-alt": "{:%H:%M:%S}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
