@@ -52,6 +52,7 @@
     blueberry
     xsettingsd
     xorg.xrdb
+    hyprshot
   ];
 
   fonts.packages = with pkgs; [
