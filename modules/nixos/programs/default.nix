@@ -54,6 +54,7 @@
     xorg.xrdb
     hyprshot
     brightnessctl
+    wlogout
   ];
 
   fonts.packages = with pkgs; [

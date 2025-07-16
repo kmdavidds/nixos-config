@@ -8,6 +8,8 @@
 
 let
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
+    ${pkgs.hyprlock}/bin/hyprlock &
+
     ${pkgs.swww}/bin/swww init &
 
     sleep 1
@@ -17,8 +19,6 @@ let
     ${pkgs.networkmanagerapplet}/bin/nm-applet --indicator &
 
     ${pkgs.dunst}/bin/dunst &
-
-    ${pkgs.hyprlock}/bin/hyprlock
   '';
 in
 {
