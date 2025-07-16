@@ -49,6 +49,7 @@ in
     #     "$mod ALT, mouse:272, resizewindow"
     #   ];
     # };
+
     settings = lib.mkForce {
       exec-once = ''${startupScript}/bin/start'';
 
@@ -162,7 +163,7 @@ in
           "enabled" = "true";
           "range" = "4";
           "render_power" = "3";
-          "color" = "rgba(1a1a1aee)";
+            "color" = "rgba(ffffff69)";
         };
 
         # https://wiki.hypr.land/Configuring/Variables/#blur
@@ -203,9 +204,9 @@ in
           "layersOut, 1, 1.5, linear, fade"
           "fadeLayersIn, 1, 1.79, almostLinear"
           "fadeLayersOut, 1, 1.39, almostLinear"
-          "workspaces, 1, 1.94, almostLinear, fade"
-          "workspacesIn, 1, 1.21, almostLinear, fade"
-          "workspacesOut, 1, 1.94, almostLinear, fade"
+          "workspaces, 1, 1.94, easeOutQuint, slide"
+          "workspacesIn, 1, 5, easeOutQuint, slide"
+          "workspacesOut, 1, 5, easeOutQuint, slide"
         ];
       };
 
