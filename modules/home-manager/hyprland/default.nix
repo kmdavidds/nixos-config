@@ -288,7 +288,7 @@ in
         "$mainMod, E, exec, $fileManager"
         "$mainMod, V, togglefloating,"
         "$mainMod, R, exec, $menu"
-        "$mainMod, P, pseudo," # dwindle
+        "$mainMod, P, exec, wlogout -b 6"
         "$mainMod, B, togglesplit," # dwindle
 
         # Move focus with mainMod + arrow keys
