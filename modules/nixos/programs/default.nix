@@ -53,6 +53,7 @@
     xsettingsd
     xorg.xrdb
     hyprshot
+    brightnessctl
   ];
 
   fonts.packages = with pkgs; [
