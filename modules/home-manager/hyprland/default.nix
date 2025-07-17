@@ -386,6 +386,8 @@ in
         "opacity 0.85 0.85,class:^(zen)$"
         "opacity 0.85 0.85,class:^(spotify)$"
         "opacity 0.85 0.85,class:^(Postman)$"
+        "idleinhibit always, title:(.*)(- YouTube — Zen Browser)"
+        "idleinhibit always, title:(nr)"
       ];
     };
   };
