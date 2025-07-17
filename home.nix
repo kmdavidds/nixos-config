@@ -79,6 +79,7 @@
     WLR_NO_HARDWARE_CURSORS = "1";
     ELECTRON_ENABLE_DARK_MODE = "1" ;
     HM = "/home/kmdavidds/Projects/nixos-config/modules/home-manager";
+    CURRENT_WALLPAPER = "/home/kmdavidds/Projects/nixos-config/modules/home-manager/swww/current-wallpaper.png";
   };
 
   # Let Home Manager install and manage itself.

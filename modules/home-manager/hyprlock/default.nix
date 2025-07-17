@@ -18,7 +18,7 @@
 
     "background" = {
       "monitor" = "";
-      "path" = "/home/kmdavidds/Pictures/eveningsky.png";
+      "path" = "/home/kmdavidds/Projects/nixos-config/modules/home-manager/swww/current-wallpaper.png";
       "blur_passes" = "3";
     };
 
@@ -26,7 +26,7 @@
       "monitor" = "";
       "size" = "20%, 5%";
       "outline_thickness" = "3";
-      "inner_color" = "rgba(0, 0, 0, 0.0)"; # no fill
+      "inner_color" = "rgba(0, 0, 0, 0.0)";
 
       "outer_color" = "rgba(f38ba8ee) rgba(cba6f7ee) 45deg";
       "check_color" = "rgba(f9e2afee) rgba(fab387ee) 45deg";

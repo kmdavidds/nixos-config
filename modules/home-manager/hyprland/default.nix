@@ -1,5 +1,3 @@
-# home.nix
-
 {
   pkgs,
   lib,
@@ -7,7 +5,30 @@
 }:
 
 let
+  dailyWallpaper = pkgs.writeShellScriptBin "daily-wallpaper" ''
+    WALLPAPER_DIR="/home/kmdavidds/Projects/nixos-config/modules/home-manager/swww"
+    DAY=$(date +%u)  # 1=Monday, 7=Sunday
+
+    case $DAY in
+        1) WALLPAPER="$WALLPAPER_DIR/sakura-trees.jpg" ;;
+        2) WALLPAPER="$WALLPAPER_DIR/pink-clouds.jpg" ;;
+        3) WALLPAPER="$WALLPAPER_DIR/flower-field.jpg" ;;
+        4) WALLPAPER="$WALLPAPER_DIR/waves.png" ;;
+        5) WALLPAPER="$WALLPAPER_DIR/blossoms.png" ;;
+        6) WALLPAPER="$WALLPAPER_DIR/evening-sky.png" ;;
+        7) WALLPAPER="$WALLPAPER_DIR/shaded-landscape.png" ;;
+        *) WALLPAPER="$WALLPAPER_DIR/evening-sky.png" ;;
+    esac
+
+    [[ ! -f "$WALLPAPER" ]] && WALLPAPER="$WALLPAPER_DIR/evening-sky.png"
+
+    rm /home/kmdavidds/Projects/nixos-config/modules/home-manager/swww/current-wallpaper.png
+    cp $WALLPAPER /home/kmdavidds/Projects/nixos-config/modules/home-manager/swww/current-wallpaper.png
+  '';
+
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
+    ${dailyWallpaper}/bin/daily-wallpaper
+
     ${pkgs.hyprlock}/bin/hyprlock &
 
     ${pkgs.hypridle}/bin/hypridle &
@@ -16,7 +37,7 @@ let
 
     sleep 1
 
-    ${pkgs.swww}/bin/swww img /home/kmdavidds/Pictures/eveningsky.png &
+    ${pkgs.swww}/bin/swww img /home/kmdavidds/Projects/nixos-config/modules/home-manager/swww/current-wallpaper.png &
 
     ${pkgs.networkmanagerapplet}/bin/nm-applet --indicator &
 
@@ -167,7 +188,7 @@ in
           "enabled" = "false";
           "range" = "4";
           "render_power" = "3";
-            "color" = "rgba(ffffff69)";
+          "color" = "rgba(ffffff69)";
         };
 
         # https://wiki.hypr.land/Configuring/Variables/#blur
