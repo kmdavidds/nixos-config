@@ -57,6 +57,7 @@
     wlogout
     wl-clipboard
     clipse
+    hypridle
   ];
 
   fonts.packages = with pkgs; [

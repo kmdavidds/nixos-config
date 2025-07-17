@@ -10,6 +10,8 @@ let
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
     ${pkgs.hyprlock}/bin/hyprlock &
 
+    ${pkgs.hypridle}/bin/hypridle &
+
     ${pkgs.swww}/bin/swww init &
 
     sleep 1
