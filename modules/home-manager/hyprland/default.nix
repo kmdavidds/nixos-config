@@ -162,7 +162,7 @@ in
         "inactive_opacity" = "1.0";
 
         "shadow" = {
-          "enabled" = "true";
+          "enabled" = "false";
           "range" = "4";
           "render_power" = "3";
             "color" = "rgba(ffffff69)";
@@ -170,10 +170,9 @@ in
 
         # https://wiki.hypr.land/Configuring/Variables/#blur
         "blur" = {
-          "enabled" = "true";
+          "enabled" = "false";
           "size" = "3";
           "passes" = "1";
-
           "vibrancy" = "0.1696";
         };
       };
@@ -241,6 +240,7 @@ in
       "misc" = {
         "force_default_wallpaper" = "0"; # Set to 0 or 1 to disable the anime mascot wallpapers
         "disable_hyprland_logo" = "true"; # If true disables the random hyprland logo / anime girl background. :(
+        "vfr" = "true";
       };
 
       #############
