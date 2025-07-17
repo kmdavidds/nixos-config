@@ -105,7 +105,7 @@ in
       # Set programs that you use
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
-      "$menu" = "wofi --show drun --show-icons";
+      "$menu" = "rofi -show drun -theme /home/kmdavidds/Projects/nixos-config/modules/home-manager/rofi/config.rasi";
 
       #################
       ### AUTOSTART ###
@@ -177,7 +177,7 @@ in
 
       # https://wiki.hypr.land/Configuring/Variables/#decoration
       "decoration" = {
-        "rounding" = "10";
+        "rounding" = "20";
         "rounding_power" = "2";
 
         # Change transparency of focused and unfocused windows
@@ -409,6 +409,15 @@ in
         "opacity 0.85 0.85,class:^(Postman)$"
         "idleinhibit always, title:(.*)(- YouTube — Zen Browser)"
         "idleinhibit always, title:(nr)"
+      ];
+
+      "layerrule" = [
+        "blur, logout_dialog"
+        "xray 1, logout_dialog"
+        "animation slide, logout_dialog"
+        "blur, rofi"
+        "dimaround, rofi"
+        "animation slide, rofi"
       ];
     };
   };

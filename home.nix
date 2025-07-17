@@ -55,6 +55,7 @@
     ".config/waybar".source = ./modules/home-manager/waybar;
     ".config/wofi".source = ./modules/home-manager/wofi;
     ".config/wlogout".source = ./modules/home-manager/wlogout;
+    ".config/rofi".source = ./modules/home-manager/rofi;
   };
 
   # Home Manager can also manage your environment variables through

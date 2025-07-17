@@ -41,7 +41,7 @@
     laravel
     aseprite
     postman
-    wofi
+    rofi-wayland
     waybar
     dunst
     libnotify
