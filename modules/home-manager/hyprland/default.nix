@@ -19,6 +19,8 @@ let
     ${pkgs.networkmanagerapplet}/bin/nm-applet --indicator &
 
     ${pkgs.dunst}/bin/dunst &
+
+    ${pkgs.clipse}/bin/clipse -listen &
   '';
 in
 {
@@ -287,9 +289,10 @@ in
         "$mainMod, C, killactive,"
         "$mainMod, N, exit,"
         "$mainMod, E, exec, $fileManager"
-        "$mainMod, V, togglefloating,"
+        "$mainMod, F, togglefloating,"
         "$mainMod, R, exec, $menu"
         "$mainMod, P, exec, wlogout -b 6"
+        "$mainMod, V, exec, kitty --class clipse -e 'clipse'"
         "$mainMod, B, togglesplit," # dwindle
 
         # Move focus with mainMod + arrow keys
@@ -368,6 +371,10 @@ in
       "windowrule" = [
         "suppressevent maximize, class:.*"
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+
+        "float,class:(clipse)"
+        "size 1159 652,class:(clipse)"
+        "stayfocused,class:(clipse)"
       ];
 
       "windowrulev2" = [

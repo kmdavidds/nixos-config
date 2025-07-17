@@ -55,6 +55,8 @@
     hyprshot
     brightnessctl
     wlogout
+    wl-clipboard
+    clipse
   ];
 
   fonts.packages = with pkgs; [

@@ -78,6 +78,7 @@
     NIXOS_OZONE_WL = "1";
     WLR_NO_HARDWARE_CURSORS = "1";
     ELECTRON_ENABLE_DARK_MODE = "1" ;
+    HM = "/home/kmdavidds/Projects/nixos-config/modules/home-manager";
   };
 
   # Let Home Manager install and manage itself.
