@@ -6,6 +6,11 @@
 {
   programs.hyprlock.enable = true;
   programs.hyprlock.settings = lib.mkForce {
+    "general" = {
+      "hide_cursor" = true;
+      "ignore_empty_input" = true;
+    };
+
     "animations" = {
       "enabled" = "true";
       "bezier" = "linear, 1, 1, 0, 0";
@@ -54,5 +59,3 @@
     };
   };
 }
-
-
