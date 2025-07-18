@@ -104,7 +104,6 @@ in
 
       # Set programs that you use
       "$terminal" = "kitty";
-      "$fileManager" = "dolphin";
       "$menu" = "rofi -show drun -theme /home/kmdavidds/Projects/nixos-config/modules/home-manager/rofi/config.rasi";
 
       #################
@@ -310,13 +309,10 @@ in
       "bind" = [
         "$mainMod, Q, exec, $terminal"
         "$mainMod, C, killactive,"
-        "$mainMod, N, exit,"
-        "$mainMod, E, exec, $fileManager"
         "$mainMod, F, togglefloating,"
         "$mainMod, R, exec, $menu"
         "$mainMod, P, exec, wlogout -b 6"
         "$mainMod, V, exec, kitty --class clipse -e 'clipse'"
-        "$mainMod, B, togglesplit," # dwindle
 
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"
@@ -327,7 +323,7 @@ in
         # Switch workspaces with mainMod + [0-9]
         "$mainMod, J, workspace, 1"
         "$mainMod, K, workspace, 2"
-        "$mainMod, L, workspace, 3"
+        "$mainMod, L, workspace, 3  "
         "$mainMod, SEMICOLON, workspace, 4"
         "$mainMod, M, workspace, 5"
         "$mainMod, COMMA, workspace, 6"
