@@ -4,6 +4,7 @@
 }:
 
 {
+  systemd.services.NetworkManager-wait-online.enable = false;
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 

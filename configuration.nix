@@ -38,6 +38,7 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   virtualisation.docker.enable = true;
+  virtualisation.docker.enableOnBoot = false;
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "kmdavidds" ];
 
