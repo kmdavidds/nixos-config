@@ -26,6 +26,8 @@
           installPhase = "cp -r ./ $out";
         }
       );
+      timeout = 0;
+      timeoutStyle = "countdown";
     };
   };
 
