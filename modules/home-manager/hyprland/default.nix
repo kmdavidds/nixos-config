@@ -10,9 +10,9 @@ let
     DAY=$(date +%u)  # 1=Monday, 7=Sunday
 
     case $DAY in
-        1) WALLPAPER="$WALLPAPER_DIR/sakura-trees.jpg" ;;
-        2) WALLPAPER="$WALLPAPER_DIR/pink-clouds.jpg" ;;
-        3) WALLPAPER="$WALLPAPER_DIR/flower-field.jpg" ;;
+        1) WALLPAPER="$WALLPAPER_DIR/sakura-trees.png" ;;
+        2) WALLPAPER="$WALLPAPER_DIR/pink-clouds.png" ;;
+        3) WALLPAPER="$WALLPAPER_DIR/flower-field.png" ;;
         4) WALLPAPER="$WALLPAPER_DIR/waves.png" ;;
         5) WALLPAPER="$WALLPAPER_DIR/blossoms.png" ;;
         6) WALLPAPER="$WALLPAPER_DIR/evening-sky.png" ;;
