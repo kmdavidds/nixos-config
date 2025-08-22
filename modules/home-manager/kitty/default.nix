@@ -20,96 +20,87 @@
     };
 
     extraConfig = ''
-      font_size 18
-      confirm_os_window_close 0
-      dynamic_background_opacity yes
-      mouse_hide_wait 1.0
-      window_padding_width 10
-      background_opacity 0.85
-      background_blur 5
-      map f1 launch --cwd=current --type=tab
-      map Alt+c kitten kitty_grab/grab.py
-
-      # vim:ft=kitty
-
-      ## name:     Catppuccin Kitty Mocha
-      ## author:   Catppuccin Org
-      ## license:  MIT
-      ## upstream: https://github.com/catppuccin/kitty/blob/main/themes/mocha.conf
-      ## blurb:    Soothing pastel theme for the high-spirited!
-
+            font_size 18
+            confirm_os_window_close 0
+            dynamic_background_opacity yes
+            mouse_hide_wait 1.0
+            window_padding_width 10
+            background_opacity 0.85
+            background_blur 5
+            map f1 launch --cwd=current --type=tab
+            map Alt+c kitten kitty_grab/grab.py
 
 
       # The basic colors
-      foreground              #cdd6f4
-      background              #1e1e2e
-      selection_foreground    #1e1e2e
-      selection_background    #f5e0dc
+      foreground              #cdd3de
+      background              #1b2b34
+      selection_foreground    #1b2b34
+      selection_background    #d8dee9
 
       # Cursor colors
-      cursor                  #f5e0dc
-      cursor_text_color       #1e1e2e
+      cursor                  #d8dee9
+      cursor_text_color       #1b2b34
 
       # URL underline color when hovering with mouse
-      url_color               #f5e0dc
+      url_color               #d8dee9
 
-      # Kitty window border colors
-      active_border_color     #b4befe
-      inactive_border_color   #6c7086
-      bell_border_color       #f9e2af
+      # Kitty window border colors (using sky blue as accent)
+      active_border_color     #5fb3b3
+      inactive_border_color   #65737e
+      bell_border_color       #fac863
 
       # OS Window titlebar colors
       wayland_titlebar_color system
       macos_titlebar_color system
 
-      # Tab bar colors
-      active_tab_foreground   #11111b
-      active_tab_background   #cba6f7
-      inactive_tab_foreground #cdd6f4
-      inactive_tab_background #181825
-      tab_bar_background      #11111b
+      # Tab bar colors (using sky blue as accent)
+      active_tab_foreground   #1b2b34
+      active_tab_background   #5fb3b3
+      inactive_tab_foreground #cdd3de
+      inactive_tab_background #343d46
+      tab_bar_background      #1b2b34
 
       # Colors for marks (marked text in the terminal)
-      mark1_foreground #1e1e2e
-      mark1_background #b4befe
-      mark2_foreground #1e1e2e
-      mark2_background #cba6f7
-      mark3_foreground #1e1e2e
-      mark3_background #74c7ec
+      mark1_foreground #1b2b34
+      mark1_background #5fb3b3
+      mark2_foreground #1b2b34
+      mark2_background #c594c5
+      mark3_foreground #1b2b34
+      mark3_background #6699cc
 
       # The 16 terminal colors
 
       # black
-      color0 #45475a
-      color8 #585b70
+      color0 #343d46
+      color8 #65737e
 
       # red
-      color1 #f38ba8
-      color9 #f38ba8
+      color1 #ec5f67
+      color9 #ec5f67
 
       # green
-      color2  #a6e3a1
-      color10 #a6e3a1
+      color2  #99c794
+      color10 #99c794
 
       # yellow
-      color3  #f9e2af
-      color11 #f9e2af
+      color3  #fac863
+      color11 #fac863
 
       # blue
-      color4  #89b4fa
-      color12 #89b4fa
+      color4  #6699cc
+      color12 #6699cc
 
       # magenta
-      color5  #f5c2e7
-      color13 #f5c2e7
+      color5  #c594c5
+      color13 #c594c5
 
       # cyan
-      color6  #94e2d5
-      color14 #94e2d5
+      color6  #5fb3b3
+      color14 #5fb3b3
 
       # white
-      color7  #bac2de
-      color15 #a6adc8
+      color7  #ab7967
+      color15 #cdd3de
     '';
   };
 }
