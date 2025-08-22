@@ -11,26 +11,26 @@ console_title_template = 'kitty'
   [[blocks.segments]]
     type = 'path'
     style = 'plain'
-    foreground = '#f9e2af'  # Catppuccin Yellow
+    foreground = '#5fb3b3'  # Oceanic Next Light Blue
     template = '{{ .Path }}'
     [blocks.segments.properties]
       style = 'full'
   [[blocks.segments]]
     type = "nix-shell"
     style = "plain"
-    foreground = "#cdd6f4"  # Catppuccin Text
-    template = "{{if ne .Type \"unknown\"}} <#74c7ec>n</><#89b4fa>i</><#89b4fa>x</><#74c7ec>:(</>shell<#89b4fa>)</>{{end}}"
+    foreground = "#5fb3b3"  # Oceanic Next Light Blue
+    template = "{{if ne .Type \"unknown\"}} <#5fb3b3>n</><#6699cc>i</><#6699cc>x</><#5fb3b3>:(</>shell<#6699cc>)</>{{end}}"
   [[blocks.segments]]
     type = "docker"
     style = "plain"
-    foreground = "#89b4fa"  # Catppuccin Blue
-    template = " context:(<#cdd6f4>{{ .Context }}</>)"
+    foreground = "#6699cc"  # Oceanic Next Blue
+    template = " <#6699cc>context:(</><#cdd3de>{{ .Context }}</><#6699cc>)</>"
 
   [[blocks.segments]]
     type = 'git'
     style = 'plain'
-    foreground = '#f38ba8'  # Catppuccin Pink
-    template = ' git:(<#cdd6f4>{{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }}{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>)</>'
+    foreground = '#ec5f67'  # Oceanic Next Red
+    template = ' <#ec5f67>git:(</><#cdd3de>{{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }}{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</><#ec5f67>)</>'
     [blocks.segments.properties]
       branch_icon = ''
       commit_icon = '@'
@@ -42,7 +42,7 @@ console_title_template = 'kitty'
   [[blocks.segments]]
     type = 'executiontime'
     style = 'plain'
-    foreground = '#f9e2af'  # Catppuccin Yellow
+    foreground = '#5fb3b3'  # Oceanic Next Light Blue
     template = '{{ .FormattedMs }}'
 
 [[blocks]]
@@ -53,16 +53,16 @@ console_title_template = 'kitty'
     type = 'text'
     style = 'plain'
     foreground_templates = [
-      "#cba6f7",  # Catppuccin Mauve
+      "#5fb3b3",  # Oceanic Next Light Blue
     ]
     template = '❯'
 
 [transient_prompt]
   foreground_templates = [
-    "#cba6f7",  # Catppuccin Mauve
+    "#5fb3b3",  # Oceanic Next Light Blue
   ]
   template = '❯ '
 
 [secondary_prompt]
-  foreground = '#cba6f7'  # Catppuccin Mauve
+  foreground = '#5fb3b3'  # Oceanic Next Light Blue
   template = '❯❯ '
