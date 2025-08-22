@@ -18,8 +18,8 @@ console_title_template = 'kitty'
   [[blocks.segments]]
     type = "nix-shell"
     style = "plain"
-    foreground = "#5fb3b3"  # Oceanic Next Light Blue
-    template = "{{if ne .Type \"unknown\"}} <#5fb3b3>n</><#6699cc>i</><#6699cc>x</><#5fb3b3>:(</>shell<#6699cc>)</>{{end}}"
+    foreground = "#cdd3de"
+    template = "{{if ne .Type \"unknown\"}} <#c0f6fb>nix:(</>shell<#c0f6fb>)</>{{end}}"
   [[blocks.segments]]
     type = "docker"
     style = "plain"
