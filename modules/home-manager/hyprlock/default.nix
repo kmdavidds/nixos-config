@@ -30,10 +30,10 @@
     "input-field" = {
       "monitor" = "";
       "size" = "20%, 5%";
-      "outline_thickness" = "3";
+      "outline_thickness" = "2";
       "inner_color" = "rgba(0, 0, 0, 0.0)";
 
-      "outer_color" = "rgba(f38ba8ee) rgba(cba6f7ee) 45deg";
+      "outer_color" = "rgba(00c1e4cc) rgb(B0E0E6) rgb(B0E0E6) rgba(00c1e4cc) 90deg";
       "check_color" = "rgba(f9e2afee) rgba(fab387ee) 45deg";
       "fail_color" = "rgba(ff6633ee) rgba(ff0066ee) 45deg";
 
