@@ -10,17 +10,17 @@ let
     DAY=$(date +%u)  # 1=Monday, 7=Sunday
 
     case $DAY in
-        1) WALLPAPER="$WALLPAPER_DIR/sakura-trees.png" ;;
-        2) WALLPAPER="$WALLPAPER_DIR/pink-clouds.png" ;;
-        3) WALLPAPER="$WALLPAPER_DIR/flower-field.png" ;;
-        4) WALLPAPER="$WALLPAPER_DIR/waves.png" ;;
-        5) WALLPAPER="$WALLPAPER_DIR/blossoms.png" ;;
-        6) WALLPAPER="$WALLPAPER_DIR/evening-sky.png" ;;
-        7) WALLPAPER="$WALLPAPER_DIR/shaded-landscape.png" ;;
-        *) WALLPAPER="$WALLPAPER_DIR/evening-sky.png" ;;
+        1) WALLPAPER="$WALLPAPER_DIR/1.png" ;;
+        2) WALLPAPER="$WALLPAPER_DIR/2.png" ;;
+        3) WALLPAPER="$WALLPAPER_DIR/3.png" ;;
+        4) WALLPAPER="$WALLPAPER_DIR/4.png" ;;
+        5) WALLPAPER="$WALLPAPER_DIR/5.png" ;;
+        6) WALLPAPER="$WALLPAPER_DIR/6.png" ;;
+        7) WALLPAPER="$WALLPAPER_DIR/7.png" ;;
+        *) WALLPAPER="$WALLPAPER_DIR/1.png" ;;
     esac
 
-    [[ ! -f "$WALLPAPER" ]] && WALLPAPER="$WALLPAPER_DIR/evening-sky.png"
+    [[ ! -f "$WALLPAPER" ]] && WALLPAPER="$WALLPAPER_DIR/1.png"
 
     rm /home/kmdavidds/Projects/nixos-config/modules/home-manager/swww/current-wallpaper.png
     cp $WALLPAPER /home/kmdavidds/Projects/nixos-config/modules/home-manager/swww/current-wallpaper.png
@@ -162,11 +162,11 @@ in
         "border_size" = "2";
 
         # https://wiki.hypr.land/Configuring/Variables/#variable-types for info about colors
-        "col.active_border" = "rgba(f38ba8ee) rgba(cba6f7ee) 45deg";
+        "col.active_border" = "rgba(00c1e4cc) rgb(B0E0E6) rgb(B0E0E6) rgba(00c1e4cc) 90deg";
         "col.inactive_border" = "rgba(595959aa)";
 
         # Set to true enable resizing windows by clicking and dragging on borders and gaps
-        "resize_on_border" = "false";
+        "resize_on_border" = "true";
 
         # Please see https://wiki.hypr.land/Configuring/Tearing/ before you turn this on
         "allow_tearing" = "false";
