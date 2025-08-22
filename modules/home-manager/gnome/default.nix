@@ -38,9 +38,9 @@
   gtk = {
     enable = true;
     theme = lib.mkForce {
-      name = "catppuccin-mocha-mauve-standard";
+      name = "catppuccin-mocha-sky-standard";
       package = pkgs.catppuccin-gtk.override {
-        accents = [ "mauve" ];
+        accents = [ "sky" ];
         variant = "mocha";
       };
     };
