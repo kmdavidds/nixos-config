@@ -11,7 +11,6 @@
     shellAliases = {
       nr = "sudo nixos-rebuild switch --flake .";
       meow = "kitten icat";
-      cat = "bat";
       c = "code .";
       ls = "eza --icons --no-permissions --no-filesize --no-user --no-time --all";
       l = "eza --icons --long --all";
@@ -24,6 +23,7 @@
       dis = "docker image ls";
       dcu = "docker context use";
       ssh = "TERM=xterm-256color ssh";
+      cd = "z";
     };
     antidote = {
       enable = true;
