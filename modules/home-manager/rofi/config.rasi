@@ -20,10 +20,10 @@ configuration {
     font:                        "Fira Code Font 10";
     background:                  transparent;     // base
     background-alt:              transparent;     // surface0
-    foreground:                  #cdd6f4;     // text
-    selected:                    #654b7b;     // mauve (50% brightness)
-    active:                      #89b4fa;     // blue
-    urgent:                      #f38ba8;     // red
+    foreground:                  #cdd3de;     // text
+    selected:                    #4a6b7a;     // light blue (50% brightness)
+    active:                      #6699cc;     // blue
+    urgent:                      #ec5f67;     // red
 }
 
 /*****----- Main Window -----*****/
