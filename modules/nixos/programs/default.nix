@@ -58,6 +58,7 @@
     wl-clipboard
     clipse
     hypridle
+    nix-prefetch-github
   ];
 
   fonts.packages = with pkgs; [

@@ -15,15 +15,15 @@
       device = "nodev";
       theme = lib.mkForce (
         pkgs.stdenv.mkDerivation {
-          pname = "fallout-grub-theme";
-          version = "2c51d28701c03c389309e34585ca8ff2b68c23e9";
+          pname = "bsol";
+          version = "8f39f66967e2391b11ee554578f0b821070ec72a";
           src = pkgs.fetchFromGitHub {
-            owner = "shvchk";
-            repo = "fallout-grub-theme";
-            rev = "2c51d28701c03c389309e34585ca8ff2b68c23e9";
-            hash = "sha256-iQU1Rv7Q0BFdsIX9c7mxDhhYaWemuaNRYs+sR1DF0Rc=";
+            "owner" = "harishnkr";
+            "repo" = "bsol";
+            "rev" = "8f39f66967e2391b11ee554578f0b821070ec72a";
+            "hash" = "sha256-UD5crwJdqnKVnxTN2vHIukJnQuzxmkko3E5wb8Xg6gs=";
           };
-          installPhase = "cp -r ./ $out";
+          installPhase = "cp -r ./bsol/ $out";
         }
       );
       timeout = 0;
