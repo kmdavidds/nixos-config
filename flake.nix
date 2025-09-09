@@ -16,6 +16,11 @@
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     hyprland.url = "github:hyprwm/Hyprland/main";
+
+    quickshell = {
+      url = "github:quickshell-mirror/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {

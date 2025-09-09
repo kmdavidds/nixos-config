@@ -59,6 +59,7 @@
     clipse
     hypridle
     nix-prefetch-github
+    inputs.quickshell.packages.x86_64-linux.default
   ];
 
   fonts.packages = with pkgs; [
