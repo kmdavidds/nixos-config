@@ -160,7 +160,7 @@ in
         "gaps_in" = "5";
         "gaps_out" = "20";
 
-        "border_size" = "2";
+        "border_size" = "0";
 
         # https://wiki.hypr.land/Configuring/Variables/#variable-types for info about colors
         # "col.active_border" = "rgba(00c1e4cc) rgb(B0E0E6) rgb(B0E0E6) rgba(00c1e4cc) 90deg";
@@ -205,36 +205,33 @@ in
       "animations" = {
         "enabled" = "yes, please :)";
 
-
         "bezier" = [
-          "smooth,0.25,0.1,0.25,1" 
-          "smoothIn,0.4,0,0.2,1" 
-          "smoothOut,0,0,0.2,1" 
-          "snapback,0.5,1.5,0.8,1" 
-          "instant,0,0,1,1" 
+          "snappy,0.25,0.1,0.25,1"
+          "snapIn,0.4,0,0.6,1"
+          "snapOut,0.2,0,0.4,1"
+          "instant,0,0,1,1"
         ];
 
-        # https://wiki.hypr.land/Configuring/Variables/#animations
         "animation" = [
-          "global, 1, 8, smooth"
+          "global, 1, 4, snappy"
 
-          "windows, 1, 5, smoothOut, slide"
-          "windowsIn, 1, 5, smoothOut, popin 90%"
-          "windowsOut, 1, 3, smoothIn, popin 90%"
+          "windows, 1, 3, snapOut, slide"
+          "windowsIn, 1, 3, snapOut, popin 92%"
+          "windowsOut, 1, 1.5, snapIn, popin 92%"
 
-          "fadeIn, 1, 4, smoothOut"
-          "fadeOut, 1, 2.5, smoothIn"
-          "fade, 1, 4, smooth"
+          "fadeIn, 1, 2, snapOut"
+          "fadeOut, 1, 1.5, snapIn"
+          "fade, 1, 2, snappy"
 
-          "layers, 1, 4, smoothOut"
-          "layersIn, 1, 4, smoothOut, slide"
-          "layersOut, 1, 3, smoothIn, slide"
-          "fadeLayersIn, 1, 3, smoothOut"
-          "fadeLayersOut, 1, 2, smoothIn"
+          "layers, 1, 2.5, snapOut"
+          "layersIn, 1, 2.5, snapOut, slide"
+          "layersOut, 1, 1.5, snapIn, slide"
+          "fadeLayersIn, 1, 2, snapOut"
+          "fadeLayersOut, 1, 1.5, snapIn"
 
-          "workspaces, 1, 6, smoothOut, slide"
+          "workspaces, 1, 3, snapOut, slide"
 
-          "border, 1, 4, smooth"
+          "border, 1, 2, snappy"
         ];
       };
 
