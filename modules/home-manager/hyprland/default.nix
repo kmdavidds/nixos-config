@@ -104,7 +104,8 @@ in
 
       # Set programs that you use
       "$terminal" = "kitty";
-      "$menu" = "rofi -show drun -theme /home/kmdavidds/Projects/nixos-config/modules/home-manager/rofi/config.rasi";
+      "$menu" =
+        "rofi -show drun -theme /home/kmdavidds/Projects/nixos-config/modules/home-manager/rofi/config.rasi";
 
       #################
       ### AUTOSTART ###
@@ -204,33 +205,36 @@ in
       "animations" = {
         "enabled" = "yes, please :)";
 
-        # Default animations, see https://wiki.hypr.land/Configuring/Animations/ for more
 
         "bezier" = [
-          "easeOutQuint,0.23,1,0.32,1"
-          "easeInOutCubic,0.65,0.05,0.36,1"
-          "linear,0,0,1,1"
-          "almostLinear,0.5,0.5,0.75,1.0"
-          "quick,0.15,0,0.1,1"
+          "smooth,0.25,0.1,0.25,1" 
+          "smoothIn,0.4,0,0.2,1" 
+          "smoothOut,0,0,0.2,1" 
+          "snapback,0.5,1.5,0.8,1" 
+          "instant,0,0,1,1" 
         ];
 
+        # https://wiki.hypr.land/Configuring/Variables/#animations
         "animation" = [
-          "global, 1, 10, default"
-          "border, 1, 5.39, easeOutQuint"
-          "windows, 1, 4.79, easeOutQuint"
-          "windowsIn, 1, 4.1, easeOutQuint, popin 87%"
-          "windowsOut, 1, 1.49, linear, popin 87%"
-          "fadeIn, 1, 1.73, almostLinear"
-          "fadeOut, 1, 1.46, almostLinear"
-          "fade, 1, 3.03, quick"
-          "layers, 1, 3.81, easeOutQuint"
-          "layersIn, 1, 4, easeOutQuint, fade"
-          "layersOut, 1, 1.5, linear, fade"
-          "fadeLayersIn, 1, 1.79, almostLinear"
-          "fadeLayersOut, 1, 1.39, almostLinear"
-          "workspaces, 1, 1.94, easeOutQuint, slide"
-          "workspacesIn, 1, 5, easeOutQuint, slide"
-          "workspacesOut, 1, 5, easeOutQuint, slide"
+          "global, 1, 8, smooth"
+
+          "windows, 1, 5, smoothOut, slide"
+          "windowsIn, 1, 5, smoothOut, popin 90%"
+          "windowsOut, 1, 3, smoothIn, popin 90%"
+
+          "fadeIn, 1, 4, smoothOut"
+          "fadeOut, 1, 2.5, smoothIn"
+          "fade, 1, 4, smooth"
+
+          "layers, 1, 4, smoothOut"
+          "layersIn, 1, 4, smoothOut, slide"
+          "layersOut, 1, 3, smoothIn, slide"
+          "fadeLayersIn, 1, 3, smoothOut"
+          "fadeLayersOut, 1, 2, smoothIn"
+
+          "workspaces, 1, 6, smoothOut, slide"
+
+          "border, 1, 4, smooth"
         ];
       };
 
