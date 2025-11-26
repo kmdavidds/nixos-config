@@ -289,7 +289,7 @@ in
 
       # https://wiki.hypr.land/Configuring/Variables/#gestures
       "gestures" = {
-        "workspace_swipe" = "true";
+        "workspace_swipe_touch" = "true";
       };
 
       # Example per-device config
