@@ -194,10 +194,9 @@ in
         # https://wiki.hypr.land/Configuring/Variables/#blur
         "blur" = {
           "enabled" = "true";
-          "size" = "4";
-          "passes" = "2";
-          "vibrancy" = "1";
-          "noise" = "0.01";
+          "size" = "7";
+          "noise" = "0.08";
+          "contrast" = "1.5";
         };
       };
 
