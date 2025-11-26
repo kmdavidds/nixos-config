@@ -413,6 +413,7 @@ in
         "blur, logout_dialog"
         "xray 1, logout_dialog"
         "animation slide, logout_dialog"
+        "noanim, selection"
         "blur, rofi"
         "dimaround, rofi"
         "animation slide, rofi"
