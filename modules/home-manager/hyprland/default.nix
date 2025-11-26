@@ -362,12 +362,12 @@ in
 
       # Laptop multimedia keys for volume and LCD brightness
       "bindel" = [
-        ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
-        ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-        ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-        ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-        ",XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+"
-        ",XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-"
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+; notify-send -e -h string:x-canonical-private-synchronous:osd \"Volume $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{printf \"%d%%\", $2*100}')\""
+        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-; notify-send -e -h string:x-canonical-private-synchronous:osd \"Volume $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{printf \"%d%%\", $2*100}')\""
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; notify-send -e -h string:x-canonical-private-synchronous:osd \"Toggle mute\""
+        ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle; notify-send -e -h string:x-canonical-private-synchronous:osd \"Toggle mic mute\""
+        ", XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+; notify-send -e -h string:x-canonical-private-synchronous:osd \"Brightness $(brightnessctl -m | cut -d, -f4)\""
+        ", XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-; notify-send -e -h string:x-canonical-private-synchronous:osd \"Brightness $(brightnessctl -m | cut -d, -f4)\""
       ];
 
       # Requires playerctl
