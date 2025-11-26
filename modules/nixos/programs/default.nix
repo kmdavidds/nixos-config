@@ -39,9 +39,8 @@
     gnomeExtensions.auto-move-windows
     auto-cpufreq
     laravel
-    aseprite
     postman
-    rofi-wayland
+    rofi
     waybar
     dunst
     libnotify
