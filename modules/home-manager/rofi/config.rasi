@@ -56,7 +56,6 @@ mainbox {
 imagebox {
     padding:                     20px;
     background-color:            transparent;
-    background-image:            url("/home/kmdavidds/Projects/nixos-config/modules/home-manager/swww/current-wallpaper.png", height);
     orientation:                 vertical;
     children:                    [ "inputbar", "dummy"];
 }
