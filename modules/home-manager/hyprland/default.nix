@@ -160,11 +160,11 @@ in
         "gaps_in" = "5";
         "gaps_out" = "20";
 
-        "border_size" = "0";
+        "border_size" = "2";
 
         # https://wiki.hypr.land/Configuring/Variables/#variable-types for info about colors
-        # "col.active_border" = "rgba(00c1e4cc) rgb(B0E0E6) rgb(B0E0E6) rgba(00c1e4cc) 90deg";
-        # "col.inactive_border" = "rgba(595959aa)";
+        "col.active_border" = "rgba(00c1e4cc) rgb(B0E0E6) rgb(B0E0E6) rgba(00c1e4cc) 90deg";
+        "col.inactive_border" = "rgba(595959aa)";
 
         # Set to true enable resizing windows by clicking and dragging on borders and gaps
         "resize_on_border" = "true";
@@ -182,7 +182,7 @@ in
 
         # Change transparency of focused and unfocused windows
         "active_opacity" = "1.0";
-        "inactive_opacity" = "0.8";
+        "inactive_opacity" = "1.0";
 
         "shadow" = {
           "enabled" = "false";
@@ -197,6 +197,7 @@ in
           "size" = "7";
           "noise" = "0.08";
           "contrast" = "1.5";
+          "passes" = "3";
         };
       };
 
@@ -288,9 +289,9 @@ in
       };
 
       # https://wiki.hypr.land/Configuring/Variables/#gestures
-      "gestures" = {
-        "workspace_swipe_touch" = "true";
-      };
+      # "gestures" = {
+      #   "workspace_swipe_touch" = "true";
+      # };
 
       # Example per-device config
       # See https://wiki.hypr.land/Configuring/Keywords/#per-device-input-configs for more
@@ -400,8 +401,8 @@ in
       "windowrulev2" = [
         "opacity 0.85 0.85,class:^(code-url-handler)$"
         "opacity 0.85 0.85,class:^(code)$"
-        "opacity 0.85 0.85,class:^(zen-beta)$"
-        "opacity 0.85 0.85,class:^(zen)$"
+        # "opacity 0.85 0.85,class:^(zen-beta)$"
+        # "opacity 0.85 0.85,class:^(zen)$"
         "opacity 0.85 0.85,class:^(spotify)$"
         "opacity 0.85 0.85,class:^(Postman)$"
         "idleinhibit always, title:(.*)(- YouTube — Zen Browser)"
