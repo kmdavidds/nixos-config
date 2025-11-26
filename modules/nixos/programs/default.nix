@@ -59,6 +59,9 @@
     hypridle
     nix-prefetch-github
     inputs.quickshell.packages.x86_64-linux.default
+    swaynotificationcenter
+    playerctl
+    pamixer
   ];
 
   fonts.packages = with pkgs; [

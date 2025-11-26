@@ -41,7 +41,7 @@ let
 
     ${pkgs.networkmanagerapplet}/bin/nm-applet --indicator &
 
-    ${pkgs.dunst}/bin/dunst &
+    ${pkgs.swaynotificationcenter}/bin/swaync &
 
     ${pkgs.clipse}/bin/clipse -listen &
   '';
