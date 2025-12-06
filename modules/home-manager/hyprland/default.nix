@@ -331,6 +331,7 @@ in
         "$mainMod, COMMA, workspace, 6"
         "$mainMod, PERIOD, workspace, 7"
         "$mainMod, SLASH, workspace, 8"
+        "ALT, TAB, workspace, previous"
 
         # Move active window to a workspace with mainMod + SHIFT + [0-9]
         "$mainMod SHIFT, J, movetoworkspace, 1"

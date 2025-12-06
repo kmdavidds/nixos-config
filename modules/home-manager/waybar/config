@@ -16,7 +16,7 @@
     "memory",
     "network",
     "battery",
-      "custom/bell",
+    "custom/bell",
     "tray"
   ],
     "clock": {
