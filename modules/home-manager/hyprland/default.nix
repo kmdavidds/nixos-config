@@ -288,10 +288,9 @@ in
         };
       };
 
-      # https://wiki.hypr.land/Configuring/Variables/#gestures
-      # "gestures" = {
-      #   "workspace_swipe_touch" = "true";
-      # };
+      # https://wiki.hypr.land/Configuring/Gestures
+      "gesture" = "3, horizontal, workspace";
+
 
       # Example per-device config
       # See https://wiki.hypr.land/Configuring/Keywords/#per-device-input-configs for more
