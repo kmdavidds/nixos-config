@@ -62,6 +62,7 @@
     swaynotificationcenter
     playerctl
     pamixer
+    google-chrome
   ];
 
   fonts.packages = with pkgs; [
