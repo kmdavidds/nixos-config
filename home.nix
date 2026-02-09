@@ -1,9 +1,26 @@
-{ ... }:
+{ inputs, ... }:
 
 {
   imports = [
     ./modules/home-manager
+    inputs.caelestia-shell.homeManagerModules.default
   ];
+
+  programs.caelestia = {
+    enable = true;
+    settings = {
+      bar.status = {
+        showBattery = true;
+      };
+      paths.wallpaperDir = "/home/kmdavidds/Projects/nixos-config/modules/home-manager/swww";
+    };
+    cli = {
+      enable = true; # Also add caelestia-cli to path
+      settings = {
+        theme.enableGtk = true;
+      };
+    };
+  };
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "kmdavidds";
@@ -78,7 +95,7 @@
     # EDITOR = "emacs";
     NIXOS_OZONE_WL = "1";
     WLR_NO_HARDWARE_CURSORS = "1";
-    ELECTRON_ENABLE_DARK_MODE = "1" ;
+    ELECTRON_ENABLE_DARK_MODE = "1";
     HM = "/home/kmdavidds/Projects/nixos-config/modules/home-manager";
     CURRENT_WALLPAPER = "/home/kmdavidds/Projects/nixos-config/modules/home-manager/swww/current-wallpaper.png";
   };

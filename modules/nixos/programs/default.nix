@@ -77,7 +77,7 @@
     withUWSM = true; # recommended for most users
     xwayland.enable = true; # Xwayland can be disabled.
   };
-  programs.waybar.enable = true;
+  programs.waybar.enable = false;
 
   programs.zsh.enable = true;
   programs.dconf.enable = true;

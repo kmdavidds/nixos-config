@@ -27,21 +27,9 @@ let
   '';
 
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
-    ${dailyWallpaper}/bin/daily-wallpaper
-
     ${pkgs.hyprlock}/bin/hyprlock &
 
-    ${pkgs.hypridle}/bin/hypridle &
-
-    ${pkgs.swww}/bin/swww init &
-
-    sleep 1
-
-    ${pkgs.swww}/bin/swww img /home/kmdavidds/Projects/nixos-config/modules/home-manager/swww/current-wallpaper.png &
-
     ${pkgs.networkmanagerapplet}/bin/nm-applet --indicator &
-
-    ${pkgs.swaynotificationcenter}/bin/swaync &
 
     ${pkgs.clipse}/bin/clipse -listen &
   '';
