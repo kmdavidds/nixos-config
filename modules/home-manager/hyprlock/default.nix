@@ -4,7 +4,7 @@
 }:
 
 {
-  programs.hyprlock.enable = true;
+  programs.hyprlock.enable = false;
   programs.hyprlock.settings = lib.mkForce {
     "general" = {
       "hide_cursor" = true;
