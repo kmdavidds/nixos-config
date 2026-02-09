@@ -63,6 +63,7 @@
     users = {
       "kmdavidds" = import ./home.nix;
     };
+    backupFileExtension = "bak";
   };
 
   xdg.portal.enable = true;
