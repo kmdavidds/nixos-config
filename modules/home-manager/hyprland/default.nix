@@ -27,10 +27,6 @@ let
   '';
 
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
-    ${pkgs.hyprlock}/bin/hyprlock &
-
-    ${pkgs.networkmanagerapplet}/bin/nm-applet --indicator &
-
     ${pkgs.clipse}/bin/clipse -listen &
   '';
 in
@@ -64,7 +60,9 @@ in
     # };
 
     settings = lib.mkForce {
-      exec-once = ''${startupScript}/bin/start'';
+      exec-once = [
+        "sleep 1 && caelestia shell lock lock"
+      ];
 
       # This is an example Hyprland config file.
       # Refer to the wiki for more information.
@@ -101,12 +99,6 @@ in
 
       # Autostart necessary processes (like notifications daemons, status bars, etc.)
       # Or execute your favorite apps at launch like this:
-
-      # "exec-once" = [
-      #   "$terminal"
-      #   "nm-applet &"
-      #   "waybar & hyprpaper & firefox"
-      # ];
 
       #############################
       ### ENVIRONMENT VARIABLES ###
@@ -279,7 +271,6 @@ in
       # https://wiki.hypr.land/Configuring/Gestures
       "gesture" = "3, horizontal, workspace";
 
-
       # Example per-device config
       # See https://wiki.hypr.land/Configuring/Keywords/#per-device-input-configs for more
       "device" = {
@@ -299,8 +290,9 @@ in
         "$mainMod, Q, exec, $terminal"
         "$mainMod, C, killactive,"
         "$mainMod, F, togglefloating,"
-        "$mainMod, R, exec, $menu"
-        "$mainMod, P, exec, wlogout -b 6"
+        "$mainMod, P, global, caelestia:session"
+        "$mainMod, R, global, caelestia:launcher"
+        "$mainMod, A, global, caelestia:showall"
         "$mainMod, V, exec, kitty --class clipse -e 'clipse'"
 
         # Move focus with mainMod + arrow keys
@@ -348,24 +340,6 @@ in
         "$mainMod, mouse:273, resizewindow"
       ];
 
-      # Laptop multimedia keys for volume and LCD brightness
-      "bindel" = [
-        ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+; notify-send -e -h string:x-canonical-private-synchronous:osd \"Volume $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{printf \"%d%%\", $2*100}')\""
-        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-; notify-send -e -h string:x-canonical-private-synchronous:osd \"Volume $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{printf \"%d%%\", $2*100}')\""
-        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; notify-send -e -h string:x-canonical-private-synchronous:osd \"Toggle mute\""
-        ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle; notify-send -e -h string:x-canonical-private-synchronous:osd \"Toggle mic mute\""
-        ", XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+; notify-send -e -h string:x-canonical-private-synchronous:osd \"Brightness $(brightnessctl -m | cut -d, -f4)\""
-        ", XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-; notify-send -e -h string:x-canonical-private-synchronous:osd \"Brightness $(brightnessctl -m | cut -d, -f4)\""
-      ];
-
-      # Requires playerctl
-      "bindl" = [
-        ", XF86AudioNext, exec, playerctl next"
-        ", XF86AudioPause, exec, playerctl play-pause"
-        ", XF86AudioPlay, exec, playerctl play-pause"
-        ", XF86AudioPrev, exec, playerctl previous"
-      ];
-
       ##############################
       ### WINDOWS AND WORKSPACES ###
       ##############################
@@ -405,6 +379,44 @@ in
         "blur, rofi"
         "dimaround, rofi"
         "animation slide, rofi"
+      ];
+
+      # Caelestia
+      "exec" = "hyprctl dispatch submap global";
+      "submap" = "global";
+
+      # Shell keybinds
+      # Launcher
+      "bindin" = [
+        "Super, catchall, global, caelestia:launcherInterrupt"
+        "Super, mouse:272, global, caelestia:launcherInterrupt"
+        "Super, mouse:273, global, caelestia:launcherInterrupt"
+        "Super, mouse:274, global, caelestia:launcherInterrupt"
+        "Super, mouse:275, global, caelestia:launcherInterrupt"
+        "Super, mouse:276, global, caelestia:launcherInterrupt"
+        "Super, mouse:277, global, caelestia:launcherInterrupt"
+        "Super, mouse_up, global, caelestia:launcherInterrupt"
+        "Super, mouse_down, global, caelestia:launcherInterrupt"
+      ];
+
+      # Brightness
+      "bindl" = [
+        ", XF86MonBrightnessUp, global, caelestia:brightnessUp"
+        ", XF86MonBrightnessDown, global, caelestia:brightnessDown"
+        # Media
+        ", XF86AudioPlay, global, caelestia:mediaToggle"
+        ", XF86AudioPause, global, caelestia:mediaToggle"
+        ", XF86AudioNext, global, caelestia:mediaNext"
+        ", XF86AudioPrev, global, caelestia:mediaPrev"
+        ", XF86AudioStop, global, caelestia:mediaStop"
+        # Audio
+        "Super, XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+      ];
+
+      "bindel" = [
+        ", XF86AudioRaiseVolume, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ 0; wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+        ", XF86AudioLowerVolume, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ 0; wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
       ];
     };
   };
