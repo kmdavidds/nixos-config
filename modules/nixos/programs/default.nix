@@ -44,11 +44,9 @@
     waybar
     dunst
     libnotify
-    networkmanagerapplet
     swww
     font-awesome
     hyprlock
-    blueberry
     xsettingsd
     xorg.xrdb
     hyprshot

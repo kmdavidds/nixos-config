@@ -62,6 +62,7 @@ in
     settings = lib.mkForce {
       exec-once = [
         "sleep 1 && caelestia shell lock lock"
+        "sleep 1 && warp-cli disconnect"
       ];
 
       # This is an example Hyprland config file.
@@ -388,7 +389,6 @@ in
       # Shell keybinds
       # Launcher
       "bindin" = [
-        "Super, catchall, global, caelestia:launcherInterrupt"
         "Super, mouse:272, global, caelestia:launcherInterrupt"
         "Super, mouse:273, global, caelestia:launcherInterrupt"
         "Super, mouse:274, global, caelestia:launcherInterrupt"

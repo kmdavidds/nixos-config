@@ -8,17 +8,8 @@
 
   programs.caelestia = {
     enable = true;
-    settings = {
-      bar.status = {
-        showBattery = true;
-      };
-      paths.wallpaperDir = "/home/kmdavidds/Projects/nixos-config/modules/home-manager/swww";
-    };
     cli = {
       enable = true; # Also add caelestia-cli to path
-      settings = {
-        theme.enableGtk = true;
-      };
     };
   };
   # Home Manager needs a bit of information about you and the paths it should
@@ -73,6 +64,7 @@
     ".config/wofi".source = ./modules/home-manager/wofi;
     ".config/wlogout".source = ./modules/home-manager/wlogout;
     ".config/rofi".source = ./modules/home-manager/rofi;
+    ".config/caelestia/shell.json".source = ./modules/home-manager/caelestia/shell.json;
   };
 
   # Home Manager can also manage your environment variables through
