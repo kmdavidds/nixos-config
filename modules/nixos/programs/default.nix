@@ -61,6 +61,8 @@
     playerctl
     pamixer
     google-chrome
+    hyprpicker
+    cliphist
   ];
 
   fonts.packages = with pkgs; [
