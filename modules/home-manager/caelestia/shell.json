@@ -77,7 +77,7 @@
       },
       {
         "id": "activeWindow",
-        "enabled": false
+        "enabled": true
       },
       {
         "id": "spacer",
@@ -289,7 +289,7 @@
       "variants": false,
       "wallpapers": false
     },
-    "showOnHover": true,
+    "showOnHover": false,
     "hiddenApps": ["nm-connection-editor", "blueberry"]
   },
   "lock": {
