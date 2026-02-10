@@ -289,7 +289,7 @@
       "variants": false,
       "wallpapers": false
     },
-    "showOnHover": false,
+    "showOnHover": true,
     "hiddenApps": ["nm-connection-editor", "blueberry"]
   },
   "lock": {
