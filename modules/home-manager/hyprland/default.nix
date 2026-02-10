@@ -156,36 +156,66 @@
       };
 
       # https://wiki.hypr.land/Configuring/Variables/#animations
+
+      # Backup of old animations configuration
+      # "animations" = {
+      #   "enabled" = "yes, please :)";
+      #
+      #   "bezier" = [
+      #     "snappy,0.25,0.1,0.25,1"
+      #     "snapIn,0.4,0,0.6,1"
+      #     "snapOut,0.2,0,0.4,1"
+      #     "instant,0,0,1,1"
+      #   ];
+      #
+      #   "animation" = [
+      #     "global, 1, 4, snappy"
+      #
+      #     "windows, 1, 3, snapOut, slide"
+      #     "windowsIn, 1, 3, snapOut, popin 92%"
+      #     "windowsOut, 1, 1.5, snapIn, popin 92%"
+      #
+      #     "fadeIn, 1, 2, snapOut"
+      #     "fadeOut, 1, 1.5, snapIn"
+      #     "fade, 1, 2, snappy"
+      #
+      #     "layers, 1, 2.5, snapOut"
+      #     "layersIn, 1, 2.5, snapOut, slide"
+      #     "layersOut, 1, 1.5, snapIn, slide"
+      #     "fadeLayersIn, 1, 2, snapOut"
+      #     "fadeLayersOut, 1, 1.5, snapIn"
+      #
+      #     "workspaces, 1, 3, snapOut, slide"
+      #
+      #     "border, 1, 2, snappy"
+      #   ];
+      # };
+
       "animations" = {
-        "enabled" = "yes, please :)";
+        "enabled" = "true";
 
         "bezier" = [
-          "snappy,0.25,0.1,0.25,1"
-          "snapIn,0.4,0,0.6,1"
-          "snapOut,0.2,0,0.4,1"
-          "instant,0,0,1,1"
+          "specialWorkSwitch,0.05,0.7,0.1,1"
+          "emphasizedAccel,0.3,0,0.8,0.15"
+          "emphasizedDecel,0.05,0.7,0.1,1"
+          "standard,0.2,0,0,1"
         ];
 
         "animation" = [
-          "global, 1, 4, snappy"
+          "layersIn, 1, 5, emphasizedDecel, fade"
+          "layersOut, 1, 4, emphasizedAccel, fade"
+          "fadeLayers, 1, 5, standard"
 
-          "windows, 1, 3, snapOut, slide"
-          "windowsIn, 1, 3, snapOut, popin 92%"
-          "windowsOut, 1, 1.5, snapIn, popin 92%"
+          "windowsIn, 1, 5, emphasizedDecel"
+          "windowsOut, 1, 3, emphasizedAccel"
+          "windowsMove, 1, 6, standard"
+          "workspaces, 1, 5, standard"
 
-          "fadeIn, 1, 2, snapOut"
-          "fadeOut, 1, 1.5, snapIn"
-          "fade, 1, 2, snappy"
+          "specialWorkspace, 1, 4, specialWorkSwitch, slidefadevert 15%"
 
-          "layers, 1, 2.5, snapOut"
-          "layersIn, 1, 2.5, snapOut, slide"
-          "layersOut, 1, 1.5, snapIn, slide"
-          "fadeLayersIn, 1, 2, snapOut"
-          "fadeLayersOut, 1, 1.5, snapIn"
-
-          "workspaces, 1, 3, snapOut, slide"
-
-          "border, 1, 2, snappy"
+          "fade, 1, 6, standard"
+          "fadeDim, 1, 6, standard"
+          "border, 1, 6, standard"
         ];
       };
 
@@ -341,6 +371,81 @@
         "float,class:(clipse)"
         "size 1159 652,class:(clipse)"
         "stayfocused,class:(clipse)"
+
+        # ######## Window rules ########
+        "opaque, class:(foot|equibop|org\\.quickshell|imv|swappy)" # They use native transparency or we want them opaque
+        "center, floating:1, xwayland:0" # Center all floating windows (not xwayland cause popups)
+
+        # Float
+        "float, class:(guifetch)" # FlafyDev/guifetch
+        "float, class:(yad)"
+        "float, class:(zenity)"
+        "float, class:(wev)"
+        "float, class:(org\\.gnome\\.FileRoller)"
+        "float, class:(file-roller)" # WHY IS THERE TWOOOOOOOOOOOOOOOO
+        "float, class:(blueman-manager)"
+        "float, class:(com\\.github\\.GradienceTeam\\.Gradience)"
+        "float, class:(feh)"
+        "float, class:(imv)"
+        "float, class:(system-config-printer)"
+        "float, class:(org\\.quickshell)"
+
+        # Float, resize and center
+        "float, class:(foot), title:(nmtui)"
+        "size 60% 70%, class:(foot), title:(nmtui)"
+        "center 1, class:(foot), title:(nmtui)"
+        "float, class:(org\\.gnome\\.Settings)"
+        "size 70% 80%, class:(org\\.gnome\\.Settings)"
+        "center 1, class:(org\\.gnome\\.Settings)"
+        "float, class:(org\\.pulseaudio\\.pavucontrol|yad-icon-browser)"
+        "size 60% 70%, class:(org\\.pulseaudio\\.pavucontrol|yad-icon-browser)"
+        "center 1, class:(org\\.pulseaudio\\.pavucontrol|yad-icon-browser)"
+        "float, class:(nwg-look)"
+        "size 50% 60%, class:(nwg-look)"
+        "center 1, class:(nwg-look)"
+
+        # Special workspaces
+        "workspace special:sysmon, class:(btop)"
+        "workspace special:music, class:(feishin|Spotify|Supersonic|Cider|com.github.th_ch.youtube_music)"
+        "workspace special:music, initialTitle:(Spotify( Free)?)" # Spotify wayland, it has no class for some reason
+        "workspace special:communication, class:(discord|equibop|vesktop|whatsapp)"
+        "workspace special:todo, class:(Todoist)"
+
+        # Dialogs
+        "float, title:((Select|Open)( a)? (File|Folder)(s)?)"
+        "float, title:(File (Operation|Upload)( Progress)?)"
+        "float, title:(.* Properties)"
+        "float, title:(Export Image as PNG)"
+        "float, title:(GIMP Crash Debug)"
+        "float, title:(Save As)"
+        "float, title:(Library)"
+
+        # Picture in picture (resize and move done via script)
+        "move 100%-w-2% 100%-w-3%, title:(Picture(-| )in(-| )[Pp]icture)" # Initial move so window doesn't shoot across the screen from the center
+        "keepaspectratio, title:(Picture(-| )in(-| )[Pp]icture)"
+        "float, title:(Picture(-| )in(-| )[Pp]icture)"
+        "pin, title:(Picture(-| )in(-| )[Pp]icture)"
+
+        # Ueberzugpp
+        "float, class:(^ueberzugpp_.*$)"
+        "noinitialfocus, class:(^ueberzugpp_.*$)"
+
+        # Steam
+        "rounding 10, class:(steam)"
+        "float, title:(Friends List), class:(steam)"
+        "immediate, class:(steam_app_[0-9]+)" # Allow tearing for steam games
+        "idleinhibit always, class:(steam_app_[0-9]+)" # Always idle inhibit when playing a steam game
+
+        # ATLauncher console
+        "float, class:(com-atlauncher-App), title:(ATLauncher Console)"
+
+        # Autodesk Fusion 360
+        "noblur, title:(Fusion360|\\(Marking Menu\\)), class:(fusion360\\.exe)"
+
+        # Ugh xwayland popups
+        "nodim, xwayland:1, title:(win[0-9]+)"
+        "noshadow, xwayland:1, title:(win[0-9]+)"
+        "rounding 10, xwayland:1, title:(win[0-9]+)"
       ];
 
       "windowrulev2" = [
@@ -355,13 +460,26 @@
       ];
 
       "layerrule" = [
-        "blur, logout_dialog"
-        "xray 1, logout_dialog"
-        "animation slide, logout_dialog"
-        "noanim, selection"
         "blur, rofi"
         "dimaround, rofi"
         "animation slide, rofi"
+
+        # ######## Layer rules ########
+        "animation fade, namespace:(hyprpicker)" # Colour picker out animation
+        "animation fade, namespace:(logout_dialog)" # wlogout
+        "animation fade, namespace:(selection)" # slurp
+        "animation fade, namespace:(wayfreeze)"
+
+        # Fuzzel
+        "animation popin 80%, namespace:(launcher)"
+        "blur, namespace:(launcher)"
+
+        # Shell
+        "noanim, namespace:(caelestia-(border-exclusion|area-picker))"
+        "animation fade, namespace:(caelestia-(drawers|background))"
+
+        "blur, namespace:(caelestia-drawers)"
+        "ignorealpha 0.57, namespace:(caelestia-drawers)"
       ];
 
       # Caelestia
