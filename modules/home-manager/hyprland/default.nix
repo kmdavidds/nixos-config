@@ -307,7 +307,14 @@
         "$mainMod, mouse_up, workspace, e-1"
 
         # Screenshot
-        ", PRINT, exec, hyprshot -m region"
+        ", PRINT, global, caelestia:screenshotFreeze"
+        "CTRL, PRINT, global, caelestia:screenshot"
+
+        # Color Picker
+        "CTRL+SHIFT, PRINT, exec, hyprpicker -a"
+
+        # Emoji Picker
+        "SUPER+ALT, Period, exec, caelestia emoji -p"
       ];
 
       # Move/resize windows with mainMod + LMB/RMB and dragging
