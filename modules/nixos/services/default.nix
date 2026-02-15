@@ -63,6 +63,6 @@
   # systemd.services."autovt@tty1".enable = false;
 
   # Enable auto-cpufreq
-  services.power-profiles-daemon.enable = false;
-  services.auto-cpufreq.enable = true;
+  services.power-profiles-daemon.enable = true;
+  # services.auto-cpufreq.enable = true;
 }

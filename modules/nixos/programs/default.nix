@@ -37,7 +37,6 @@
     gnomeExtensions.spotify-controls
     gnomeExtensions.system-monitor
     gnomeExtensions.auto-move-windows
-    auto-cpufreq
     laravel
     postman
     rofi
