@@ -34,8 +34,9 @@
 
     settings = lib.mkForce {
       exec-once = [
-        "sleep 1 && caelestia shell lock lock"
-        "sleep 1 && warp-cli disconnect"
+        "clipse -listen"
+        "caelestia shell lock isLocked && caelestia shell lock lock"
+        "sleep 2 && warp-cli disconnect"
       ];
 
       # This is an example Hyprland config file.
