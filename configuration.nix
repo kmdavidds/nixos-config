@@ -5,6 +5,7 @@
 {
   pkgs,
   inputs,
+  lib,
   ...
 }:
 
@@ -30,6 +31,9 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.networkmanager.connectionConfig = lib.mkAfter {
+    "wifi.powersave" = 2;
+  };
 
   # Set your time zone.
   time.timeZone = "Asia/Jakarta";
