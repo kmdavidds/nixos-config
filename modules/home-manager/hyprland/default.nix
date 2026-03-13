@@ -55,7 +55,7 @@
       ################
 
       # See https://wiki.hypr.land/Configuring/Monitors/
-      "monitor" = ",preferred,auto,1";
+      "monitor" = ",preferred,auto,1,bitdepth,10";
 
       ###################
       ### MY PROGRAMS ###

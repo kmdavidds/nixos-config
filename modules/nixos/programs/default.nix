@@ -62,6 +62,8 @@
     google-chrome
     hyprpicker
     cliphist
+    biome
+    vlc
   ];
 
   fonts.packages = with pkgs; [
