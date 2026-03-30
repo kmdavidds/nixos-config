@@ -64,6 +64,7 @@
     cliphist
     biome
     vlc
+    mqtt-explorer
   ];
 
   fonts.packages = with pkgs; [
