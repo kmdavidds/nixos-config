@@ -28,6 +28,7 @@
       );
       timeout = 0;
       timeoutStyle = "countdown";
+      default = "saved";
     };
   };
 
