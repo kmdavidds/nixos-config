@@ -65,7 +65,7 @@
     biome
     vlc
     mqtt-explorer
-    opencode
+    inputs.opencode.packages.x86_64-linux.default
   ];
 
   fonts.packages = with pkgs; [
